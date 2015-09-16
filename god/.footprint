@@ -1,0 +1,4 @@
+drwxr-xr-x	root/root	etc/
+-rw-r--r--	root/root	etc/god.conf
+drwxr-xr-x	root/root	sbin/
+-rwxr-xr-x	root/root	sbin/god

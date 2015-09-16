@@ -1,0 +1,24 @@
+# Description: Minimalistic init script. (git checkout)
+# URL:         https://github.com/onodera-punpun/god
+# Packager:    onodera, onodera at openmailbox dot org
+# Maintainer:  6c37 Team, https://github.com/6c37/crux-ports/issues
+# Depends on:  busybox sinit
+
+name=god
+version=git
+release=1
+source=()
+
+build () {
+	cd $PKGMK_SOURCE_DIR
+
+	if cd $name; then
+		git fetch -q; git reset --hard origin/master
+	else
+		git clone git://github.com/onodera-punpun/god $name
+		cd $name
+	fi
+
+	install -Dm755 god $PKG/sbin/god
+	install -Dm644 god.conf $PKG/etc/god.conf
+}
