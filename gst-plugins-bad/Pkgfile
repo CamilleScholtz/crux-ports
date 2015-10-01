@@ -16,6 +16,7 @@ build() {
 		--prefix=/usr \
 		--mandir=/usr/man \
 		--enable-experimental \
+		--enable-sndio \
 		--disable-debug \
 		--disable-nls \
 		--disable-dependency-tracking \
