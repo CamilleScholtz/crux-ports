@@ -1,7 +1,7 @@
 # Description: Minimalistic init script. (git checkout)
 # URL:         https://github.com/onodera-punpun/god
 # Packager:    onodera, onodera at openmailbox dot org
-# Maintainer:  6c37 Team, https://github.com/6c37/crux-ports/issues
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
 # Depends on:  git busybox sinit
 
 name=god
