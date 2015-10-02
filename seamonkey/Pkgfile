@@ -2,7 +2,7 @@
 # URL:         http://www.seamonkey-project.org/
 # Packager:    onodera, onodera at openmailbox dot org
 # Maintainer:  6c37 Team, https://github.com/6c37/crux-ports/issues
-# Depends on:  nss libidl gtk python yasm mesa3d gst-plugins-base
+# Depends on:  nss libidl gtk python yasm mesa3d gst-plugins-base libevent
  
 name=seamonkey
 version=2.38
