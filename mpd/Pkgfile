@@ -6,7 +6,7 @@
 
 name=mpd
 version=0.19.10
-release=2
+release=1
 source=(http://www.musicpd.org/download/mpd/0.19/${name}-${version}.tar.xz)
 
 build() {
@@ -17,12 +17,30 @@ build() {
 		--sysconfdir=/etc \
 		--enable-inotify \
 		--enable-libmpdclient \
-		--enable-flac \
+		--enable-pipe-output \
 		--enable-oss \
-		--disable-alsa
+		--enable-flac \
+		--disable-libwrap \
+		--disable-soundcloud \
+		--disable-jack \
+		--disable-pulse \
+		--disable-sidplay \
+		--disable-fluidsynth \
+		--disable-gme \
+		--disable-lame-encoder \
+		--disable-openal \
+		--disable-alsa \
+		--disable-shout \
+		--disable-sqlite \
+		--disable-mms \
+		--disable-modplug \
+		--disable-shout \
+		--disable-neighbor-plugins \
+		--disable-wavpack \
+		--with-zeroconf=no
 
 	make
-	make DESTDIR=${PKG} mandir=/usr/man install
+	make DESTDIR=${PKG} mandir="/usr/man" install
 
 	install -Dm644 doc/mpdconf.example $PKG/etc/mpd.conf 
 
