@@ -1,0 +1,27 @@
+# Description: Small command-line utilities. (git checkout)
+# URL:         https://github.com/baskerville/sutils
+# Packager:    onodera, onodera at openmailbox dot org
+# Maintainer:  6c37 Team, https://github.com/6c37/crux-ports/issues
+# Depends on:  
+
+name=sutils
+version=git
+release=1
+source=()
+
+build() {
+	cd $PKGMK_SOURCE_DIR
+
+	if cd $name; then
+		git fetch -q; git reset --hard origin/master
+	else
+		git clone git://github.com/baskerville/sutils $name
+		cd $name
+	fi
+
+	rm volume.c
+	sed -i "s/ -lasound//" Makefile
+
+	make
+	make PREFIX=/usr DESTDIR=$PKG install
+}
