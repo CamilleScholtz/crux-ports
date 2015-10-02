@@ -6,7 +6,7 @@
  
 name=seamonkey
 version=2.38
-release=1
+release=2
 source=(https://archive.mozilla.org/pub/mozilla.org/seamonkey/releases/$version/source/seamonkey-$version.source.tar.xz)
 
 build() {
@@ -16,7 +16,7 @@ cat <<- EOF > .mozconfig
 	ac_add_options --enable-application=suite
 	ac_add_options --prefix=/usr
 
-	ac_add_options --enable-optimize="$CFLAGS"
+	ac_add_options --enable-optimize
 	ac_add_options --enable-strip
 	ac_add_options --enable-install-strip
 	mk_add_options MOZ_MAKE_FLAGS="$MAKEFLAGS -s"
@@ -34,7 +34,7 @@ cat <<- EOF > .mozconfig
 	ac_add_options --enable-system-ffi
 	ac_add_options --enable-system-pixman
 	ac_add_options --enable-system-sqlite
-	ac_add_options --enable-system-cairo
+	#ac_add_options --enable-system-cairo
 
 	ac_add_options --with-pthreads
 	ac_add_options --enable-official-branding
