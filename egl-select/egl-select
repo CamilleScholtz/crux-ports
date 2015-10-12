@@ -122,7 +122,7 @@ doUse() {
       ln -sf $NV_GLES_DIR/libEGL.so.1 /usr/lib/libEGL.so.1.0.0
       doEGLsymlinks
       /sbin/ldconfig > /dev/null 2>&1
-      ) && echo "* nvidia gl/glx selected"
+      ) && echo "* nvidia gle/gles selected"
       ;;
     *)
       infoUsage
