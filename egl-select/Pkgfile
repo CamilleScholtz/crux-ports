@@ -1,0 +1,14 @@
+# Description: A selector for egl/gles libraries and extensions, based on gl-select
+# URL: http://crux.nu/gitweb/?p=ports/opt.git;a=tree;f=gl-select
+# Maintainer: Jose V Beneyto, sepen at crux dot nu
+# Packager: Matt Housh, jaeger at morpheus dot net
+# Depends on: xorg-server
+
+name=egl-select
+version=1
+release=3
+source=($name)
+
+build() {
+  install -D -m 0755 -o root -g root $SRC/$name $PKG/usr/bin/$name
+}
