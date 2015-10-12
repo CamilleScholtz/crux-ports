@@ -24,7 +24,7 @@ drwxr-xr-x	root/root	usr/bin/
 drwxr-xr-x	root/root	usr/lib/
 drwxr-xr-x	root/root	usr/lib/.nvidia/
 -rwxr-xr-x	root/root	usr/lib/.nvidia/libEGL.so.1
-lrwxrwxrwx	root/root	usr/lib/.nvidia/libGLESv1_CM.so.1.0.0 -> libGLESv1_CM.so.355.11
+lrwxrwxrwx	root/root	usr/lib/.nvidia/libGLESv1_CM.so.1.1.0 -> libGLESv1_CM.so.355.11
 -rwxr-xr-x	root/root	usr/lib/.nvidia/libGLESv1_CM.so.355.11
 lrwxrwxrwx	root/root	usr/lib/.nvidia/libGLESv2.so.2.0.0 -> libGLESv2.so.355.11
 -rwxr-xr-x	root/root	usr/lib/.nvidia/libGLESv2.so.355.11
