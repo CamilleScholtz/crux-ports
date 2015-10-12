@@ -80,7 +80,7 @@ doStatus() {
   local file=$(file -h /usr/lib/libEGL.so.1.0.0 | awk '{ if (/symbolic link/) print $5; else print $1; }' | sed 's|:||')
   case $file in
     *libEGL.so.1.0.0) echo "* xorg egl/gles is selected" ;;
-    *libEGL_so.1) echo "* nvidia egl/gles is selected" ;;
+    *libEGL.so.1) echo "* nvidia egl/gles is selected" ;;
   esac
 }
 
