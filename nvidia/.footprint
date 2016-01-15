@@ -8,9 +8,12 @@ drwxr-xr-x	root/root	etc/X11/xorg.conf.d/
 drwxr-xr-x	root/root	lib/
 drwxr-xr-x	root/root	lib/modules/
 drwxr-xr-x	root/root	lib/modules/<kernel-version>/
-drwxr-xr-x	root/root	lib/modules/<kernel-version>/extra/
--rw-r--r--	root/root	lib/modules/<kernel-version>/extra/nvidia-uvm.ko
--rw-r--r--	root/root	lib/modules/<kernel-version>/extra/nvidia.ko
+drwxr-xr-x	root/root	lib/modules/<kernel-version>/kernel/
+drwxr-xr-x	root/root	lib/modules/<kernel-version>/kernel/drivers/
+drwxr-xr-x	root/root	lib/modules/<kernel-version>/kernel/drivers/video/
+-rw-r--r--	root/root	lib/modules/<kernel-version>/kernel/drivers/video/nvidia-modeset.ko
+-rw-r--r--	root/root	lib/modules/<kernel-version>/kernel/drivers/video/nvidia-uvm.ko
+-rw-r--r--	root/root	lib/modules/<kernel-version>/kernel/drivers/video/nvidia.ko
 drwxr-xr-x	root/root	lib/udev/
 drwxr-xr-x	root/root	lib/udev/rules.d/
 -rw-r--r--	root/root	lib/udev/rules.d/90-nvidia-uvm.rules
