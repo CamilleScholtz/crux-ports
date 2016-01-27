@@ -1,0 +1,23 @@
+From cfefc2daf0fcd323354d93f60a2039e8d325d8b4 Mon Sep 17 00:00:00 2001
+From: Camille <onodera@openmailbox.org>
+Date: Wed, 27 Jan 2016 22:33:46 +0100
+Subject: [PATCH] Update screen.C
+
+---
+ src/screen.C | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/screen.C b/src/screen.C
+index 412de27..6997ecf 100644
+--- a/src/screen.C
++++ b/src/screen.C
+@@ -2125,7 +2125,7 @@ rxvt_term::scr_refresh () NOTHROW
+           {
+             rend_t rend = cur_rend;
+ 
+-            rend ^= RS_RVid;
++            rend ^= RS_Uline;
+             rend = SET_FGCOLOR (rend, ccol1);
+             rend = SET_BGCOLOR (rend, ccol2);
+ 
+

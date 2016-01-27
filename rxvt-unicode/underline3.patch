@@ -1,0 +1,76 @@
+From 956ada962f03b2e6918318c291316a9d88df4e01 Mon Sep 17 00:00:00 2001
+From: Camille <onodera@openmailbox.org>
+Date: Wed, 27 Jan 2016 22:39:25 +0100
+Subject: [PATCH] Update screen.C
+
+---
+ src/screen.C | 34 ++++++++++++++++------------------
+ 1 file changed, 16 insertions(+), 18 deletions(-)
+
+diff --git a/src/screen.C b/src/screen.C
+index 6997ecf..c3583ac 100644
+--- a/src/screen.C
++++ b/src/screen.C
+@@ -2121,13 +2121,18 @@ rxvt_term::scr_refresh () NOTHROW
+           ccol2 = Color_bg;
+ #endif
+ 
+-        if (focus && cursor_type == 0)
++        if (focus && cursor_type != 2)
+           {
+             rend_t rend = cur_rend;
+ 
+-            rend ^= RS_Uline;
+-            rend = SET_FGCOLOR (rend, ccol1);
+-            rend = SET_BGCOLOR (rend, ccol2);
++            if (cursor_type == 1)
++              rend ^= RS_Uline;
++            else
++              {
++                rend ^= RS_RVid;
++                rend = SET_FGCOLOR (rend, ccol1);
++                rend = SET_BGCOLOR (rend, ccol2);
++              }
+ 
+             scr_set_char_rend (ROW(screen.cur.row), cur_col, rend);
+           }
+@@ -2141,7 +2146,7 @@ rxvt_term::scr_refresh () NOTHROW
+     // and either the window is unfocused or the cursor style is
+     // underline or vertical bar, so as to clear the outline cursor in
+     // the next refresh if the cursor moves or becomes invisible
+-    if (showcursor && (!focus || cursor_type != 0) && screen.cur.row - view_start < nrow)
++    if (showcursor && (!focus || cursor_type == 2) && screen.cur.row - view_start < nrow)
+       {
+         oldcursor.row = screen.cur.row - view_start;
+         oldcursor.col = screen.cur.col;
+@@ -2443,23 +2448,16 @@ rxvt_term::scr_refresh () NOTHROW
+    */
+   if (showcursor)
+     {
+-          if (cursor_type == 0)
++          if (cursor_type != 2)
+             scr_set_char_rend (ROW(screen.cur.row), cur_col, cur_rend);
+           else if (oldcursor.row >= 0)
+             {
+               XSetForeground (dpy, gc, pix_colors[ccol1]);
+-              if (cursor_type == 1)
+-                XFillRectangle (dpy, vt, gc,
+-                                Col2Pixel (cur_col),
+-                                Row2Pixel (oldcursor.row + 1) - 2,
+-                                Width2Pixel (1),
+-                                2);
+-              else
+-                XFillRectangle (dpy, vt, gc,
+-                                Col2Pixel (cur_col),
+-                                Row2Pixel (oldcursor.row),
+-                                1,
+-                                Height2Pixel (1));
++              XFillRectangle (dpy, vt, gc,
++                              Col2Pixel (cur_col),
++                              Row2Pixel (oldcursor.row),
++                              1,
++                              Height2Pixel (1));
+             }
+ 
+     }
+
