@@ -1,0 +1,22 @@
+From 488f9c80ec87a0a5592c6ff831b812a0b6a0a369 Mon Sep 17 00:00:00 2001
+From: Camille <onodera@openmailbox.org>
+Date: Sun, 13 Mar 2016 17:12:07 +0100
+Subject: [PATCH] Add missing GDK_KEY_VoidSymbol #define.
+
+Else the build with fail with `pqiv.c:4446:20: error: 'GDK_KEY_VoidSymbol' undeclared (first use in this function)`
+---
+ pqiv.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/pqiv.c b/pqiv.c
+index 7218acd..0eaa1ce 100644
+--- a/pqiv.c
++++ b/pqiv.c
+@@ -74,6 +74,7 @@
+ #define GDK_BUTTON_MIDDLE 2
+ #define GDK_BUTTON_SECONDARY 3
+ 
++#define GDK_KEY_VoidSymbol 0xffffff
+ #define GDK_KEY_Escape 0xff1b
+ #define GDK_KEY_Return 0xff0d
+ #define GDK_KEY_Left 0xff51

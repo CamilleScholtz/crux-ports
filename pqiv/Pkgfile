@@ -1,0 +1,31 @@
+# Description: A simple image viewer inspired by qiv. (git checkout)
+# URL:         http://www.pberndt.com/Programme/Linux/pqiv/index.html
+# Packager:    onodera, onodera at openmailbox dot org
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  gtk
+# Optional:    poppler-glib imagemagick gdk-pixbuf
+
+name=pqiv
+version=git
+release=1
+source=(fix-build.patch)
+
+build() {
+	cd $PKGMK_SOURCE_DIR
+
+	if cd $name; then
+		git fetch -q; git reset --hard origin/configurable-features
+	else
+		git clone git://github.com/phillipberndt/pqiv -b configurable-features $name
+		cd $name
+	fi
+
+	patch -p1 < $SRC/fix-build.patch
+
+	./configure \
+		--prefix=/usr \
+		--gtk-version=2
+
+	make
+	make DESTDIR=$PKG install
+}
