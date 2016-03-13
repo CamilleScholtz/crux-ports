@@ -8,19 +8,17 @@
 name=pqiv
 version=git
 release=1
-source=(fix-build.patch)
+source=()
 
 build() {
 	cd $PKGMK_SOURCE_DIR
 
 	if cd $name; then
-		git fetch -q; git reset --hard origin/configurable-features
+		git fetch -q; git reset --hard origin/master
 	else
-		git clone git://github.com/phillipberndt/pqiv -b configurable-features $name
+		git clone git://github.com/phillipberndt/pqiv $name
 		cd $name
 	fi
-
-	patch -p1 < $SRC/fix-build.patch
 
 	./configure \
 		--prefix=/usr \
