@@ -1,0 +1,15 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/echinus
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/doc/
+drwxr-xr-x	root/root	usr/share/doc/echinus-0.4.9/
+-rw-r--r--	root/root	usr/share/doc/echinus-0.4.9/README
+drwxr-xr-x	root/root	usr/share/echinus/
+-rw-r--r--	root/root	usr/share/echinus/close.xbm
+-rw-r--r--	root/root	usr/share/echinus/echinusrc
+-rw-r--r--	root/root	usr/share/echinus/iconify.xbm
+-rw-r--r--	root/root	usr/share/echinus/max.xbm
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/echinus.1.gz
