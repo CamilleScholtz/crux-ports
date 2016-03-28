@@ -1,0 +1,12 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/pegasus
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/pegasus.1.gz
+drwxr-xr-x	root/root	usr/share/pegasus/
+-rw-r--r--	root/root	usr/share/pegasus/close.xbm
+-rw-r--r--	root/root	usr/share/pegasus/config
+-rw-r--r--	root/root	usr/share/pegasus/iconify.xbm
+-rw-r--r--	root/root	usr/share/pegasus/max.xbm
