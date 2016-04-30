@@ -1,8 +1,8 @@
-# Description: F? Virtual Window Manager for X11. (git checkout)
-# URL:         http://fvwm.org/
+# Description: Fast, lightweight, standards-compliant window manager. (git checkout)
+# URL:         https://github.com/onodera-punpun/openbox 
 # Packager:    onodera, onodera at openmailbox dot org
-# Maintainer:  6c37 Team, https://github.com/6c37/crux-ports/issues
-# Depends on:  git xorg-server
+# Maintainer:  onodera, https://github.com/onodra-punpun/crux-ports/issues
+# Depends on:  git xorg-server pango
 
 name=openbox
 version=git
