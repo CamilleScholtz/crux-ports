@@ -1,35 +1,38 @@
 # Description: rxvt fork with unicode and xft support
-# URL: http://software.schmorp.de/#rxvt-unicode
-# Maintainer: Fredrik Rinnestam, fredrik at crux dot nu
-# Depends on: xorg-libxft, xorg-libxpm, perl
+# URL:         http://software.schmorp.de/#rxvt-unicode
+# Packager:    onodera, onodera at openmailbox dot org
+# Maintainer:  onodera, https://github.com/onodra-punpun/crux-ports/issues
+# Depends on:  xorg-libxft xorg-libxpm perl
 
 name=rxvt-unicode
 version=9.22
 release=1
-source=(http://dist.schmorp.de/$name/Attic/$name-$version.tar.bz2
-underline.patch underline2.patch underline3.patch)
+source=(
+	http://dist.schmorp.de/$name/Attic/$name-$version.tar.bz2
+	underline1.patch
+	underline2.patch
+	underline3.patch
+)
 
 build() {
-   cd $name-$version
+	cd $name-$version
 
-	patch -p1 < $SRC/underline.patch
+	patch -p1 < $SRC/underline1.patch
 	patch -p1 < $SRC/underline2.patch
 	patch -p1 < $SRC/underline3.patch
 
+	./configure --prefix=/usr \
+		--enable-utmp \
+		--enable-wtmp \
+		--disable-transparency \
+		--disable-fading \
+		--enable-mousewheel \
+		--enable-256-color \
+		--disable-xft \
+		--enable-font-styles \
+		--enable-unicode3
 
-   ./configure --prefix=/usr \
-               --enable-utmp \
-               --enable-wtmp \
-               --disable-transparency \
-               --disable-fading \
-               --enable-mousewheel \
-               --enable-256-color \
-               --disable-xft \
-               --enable-font-styles \
-               --enable-unicode3
-
-   make
-
-   mkdir -p $PKG/usr/share/terminfo
-   make TERMINFO=$PKG/usr/share/terminfo DESTDIR=$PKG install
+	make
+	mkdir -p $PKG/usr/share/terminfo
+	make TERMINFO=$PKG/usr/share/terminfo DESTDIR=$PKG install
 }
