@@ -1,8 +1,9 @@
-# Description: A portable subtitle renderer for the ASS/SSA (Advanced Substation Alpha/Substation Alpha) subtitle format.
-# URL: https://github.com/libass/libass
-# Maintainer: Danny Rawlins, crux at romster dot me
-# Packager: Matt Housh, jaeger at morpheus dot net
+# Description: Complete solution to record, convert and stream audio and video.
+# URL:         http://ffmpeg.org
+# Packager:    onodera, onodera at openmailbox dot org
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
 # Depends on: fribidi harfbuzz
+
 
 name=libass
 version=0.13.2
@@ -11,7 +12,9 @@ source=(https://github.com/$name/$name/releases/download/$version/$name-$version
 
 build() {
 	cd $name-$version
+
 	./configure --prefix=/usr
+
 	make
 	make DESTDIR=$PKG install
 }
