@@ -1,0 +1,14 @@
+# Description: A modern and intuitive terminal-based text editor. (nightly, binary version)
+# URL:         https://github.com/zyedidia/micro
+# Packager:    onodera, onodera at openmailbox dot org
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  
+
+name=micro
+version=nightly
+release=1
+source=(http://zbyedidia.webfactional.com/micro/binaries/micro-linux64.tar.gz)
+
+build() {
+	install -Dm644 micro/micro $PKG/usr/bin/micro
+}
