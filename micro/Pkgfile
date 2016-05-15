@@ -10,5 +10,5 @@ release=1
 source=(http://zbyedidia.webfactional.com/micro/binaries/micro-linux64.tar.gz)
 
 build() {
-	install -Dm644 micro/micro $PKG/usr/bin/micro
+	install -Dm755 micro/micro $PKG/usr/bin/micro
 }
