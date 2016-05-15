@@ -4,7 +4,6 @@
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
 # Depends on:  fribidi harfbuzz
 
-
 name=libass
 version=0.13.2
 release=1
