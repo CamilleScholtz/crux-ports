@@ -1,0 +1,46 @@
+# Description: An HTTP and reverse proxy server
+# URL:         http://nginx.org/
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  libpcre zlib openssl
+
+name=nginx
+version=1.11.1
+release=1
+source=(
+	http://nginx.org/download/nginx-$version.tar.gz
+	https://github.com/vkholodkov/nginx-upload-module/archive/2.2.zip
+	nginx.conf
+	nginx
+)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/etc/nginx \
+		--sbin-path=/usr/sbin/nginx \
+		--conf-path=/etc/nginx/nginx.conf \
+		--error-log-path=/var/log/nginx/error.log \
+		--http-log-path=/var/log/nginx/access.log \
+		--pid-path=/var/run/nginx.pid \
+		--lock-path=/var/lock/nginx.pid \
+		--with-http_ssl_module \
+		--with-pcre-jit \
+		--with-file-aio \
+		--with-http_v2_module \
+		--with-threads \
+		--user=nginx \
+		--group=nginx \
+		--with-ipv6 \
+		--add-module=$SRC/nginx-upload-module-2.2
+
+	make
+	make DESTDIR=$PKG install
+
+	install -dm755 $PKG/var/log/$nginx
+	install -Dm644 $SRC/nginx.conf $PKG/etc/nginx/nginx.conf
+	install -Dm755 $SRC/nginx $PKG/etc/rc.d/nginx
+	chown nginx:nginx $PKG/var/log/nginx
+
+	find $PKG/etc/nginx -name "*.default" -delete
+}
