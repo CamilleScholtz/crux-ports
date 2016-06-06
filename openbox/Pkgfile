@@ -1,6 +1,5 @@
 # Description: Fast, lightweight, standards-compliant window manager. (git checkout)
 # URL:         https://github.com/onodera-punpun/openbox 
-# Packager:    onodera, onodera at openmailbox dot org
 # Maintainer:  onodera, https://github.com/onodra-punpun/crux-ports/issues
 # Depends on:  git xorg-server pango
 

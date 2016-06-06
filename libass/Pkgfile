@@ -1,6 +1,5 @@
 # Description: Complete solution to record, convert and stream audio and video.
 # URL:         http://ffmpeg.org
-# Packager:    onodera, onodera at openmailbox dot org
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
 # Depends on:  fribidi harfbuzz
 
