@@ -1,0 +1,9 @@
+diff -urN go.orig/src/crypto/x509/root_linux.go go/src/crypto/x509/root_linux.go
+--- go.orig/src/crypto/x509/root_linux.go	2016-04-19 18:50:08.000000000 -0500
++++ go/src/crypto/x509/root_linux.go	2016-05-17 17:23:51.449252229 -0500
+@@ -10,4 +10,5 @@
+ 	"/etc/pki/tls/certs/ca-bundle.crt",   // Fedora/RHEL
+ 	"/etc/ssl/ca-bundle.pem",             // OpenSUSE
+ 	"/etc/pki/tls/cacert.pem",            // OpenELEC
++	"/etc/ssl/cert.pem",
+ }
