@@ -27,7 +27,7 @@ build() {
 		--disable-fading \
 		--enable-mousewheel \
 		--enable-256-color \
-		--disable-xft \
+		--enable-xft \
 		--enable-font-styles \
 		--disable-unicode3
 
