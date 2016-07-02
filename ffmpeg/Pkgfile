@@ -4,7 +4,7 @@
 # Depends on:  gnutls lame libass libbluray libgmp libmodplug libsdl libtheora libva libvpx libxvid opencore-amr openjpeg opus rtmpdump schroedinger speex x264 x265
 
 name=ffmpeg
-version=3.0.2
+version=3.1.1
 release=1
 source=(http://ffmpeg.org/releases/$name-$version.tar.bz2)
 
@@ -49,6 +49,7 @@ build() {
 			--enable-version3 \
 			--enable-x11grab
 
-	make
+	[ "$CC" ] || CC=gcc
+	make CC="$CC" SHARED_PP='yes' $MAKEFLAGS
 	make DESTDIR=$PKG install install-man
 }
