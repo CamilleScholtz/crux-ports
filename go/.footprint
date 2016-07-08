@@ -4,9 +4,6 @@ lrwxrwxrwx	root/root	usr/bin/go -> /usr/lib/go/bin/go
 lrwxrwxrwx	root/root	usr/bin/gofmt -> /usr/lib/go/bin/gofmt
 drwxr-xr-x	root/root	usr/lib/
 drwxr-xr-x	root/root	usr/lib/go/
-drwxr-xr-x	root/root	usr/lib/go/.github/
--rw-r--r--	root/root	usr/lib/go/.github/ISSUE_TEMPLATE
--rw-r--r--	root/root	usr/lib/go/.github/PULL_REQUEST_TEMPLATE
 -rw-r--r--	root/root	usr/lib/go/AUTHORS
 -rw-r--r--	root/root	usr/lib/go/CONTRIBUTING.md
 -rw-r--r--	root/root	usr/lib/go/CONTRIBUTORS
@@ -206,7 +203,9 @@ drwxr-xr-x	root/root	usr/lib/go/misc/cgo/errors/
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/errors/issue13129.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/errors/issue13423.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/errors/issue13635.go
+-rw-r--r--	root/root	usr/lib/go/misc/cgo/errors/issue13830.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/errors/issue14669.go
+-rw-r--r--	root/root	usr/lib/go/misc/cgo/errors/issue16116.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/errors/issue7757.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/errors/issue8442.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/errors/ptr.go
@@ -427,6 +426,7 @@ drwxr-xr-x	root/root	usr/lib/go/misc/cgo/testsanitizers/
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/testsanitizers/tsan3.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/testsanitizers/tsan4.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/testsanitizers/tsan5.go
+-rw-r--r--	root/root	usr/lib/go/misc/cgo/testsanitizers/tsan6.go
 drwxr-xr-x	root/root	usr/lib/go/misc/cgo/testshared/
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/testshared/shared_test.go
 drwxr-xr-x	root/root	usr/lib/go/misc/cgo/testshared/src/
@@ -1042,6 +1042,7 @@ drwxr-xr-x	root/root	usr/lib/go/pkg/linux_amd64/cmd/vendor/golang.org/x/arch/x86
 -rw-r--r--	root/root	usr/lib/go/pkg/linux_amd64/cmd/vendor/golang.org/x/arch/x86/x86asm.a
 drwxr-xr-x	root/root	usr/lib/go/pkg/linux_amd64/cmd/vet/
 drwxr-xr-x	root/root	usr/lib/go/pkg/linux_amd64/cmd/vet/internal/
+-rw-r--r--	root/root	usr/lib/go/pkg/linux_amd64/cmd/vet/internal/cfg.a
 -rw-r--r--	root/root	usr/lib/go/pkg/linux_amd64/cmd/vet/internal/whitelist.a
 drwxr-xr-x	root/root	usr/lib/go/pkg/linux_amd64/compress/
 -rw-r--r--	root/root	usr/lib/go/pkg/linux_amd64/compress/bzip2.a
@@ -2321,8 +2322,13 @@ drwxr-xr-x	root/root	usr/lib/go/src/cmd/vet/
 -rw-r--r--	root/root	usr/lib/go/src/cmd/vet/deadcode.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/vet/doc.go
 drwxr-xr-x	root/root	usr/lib/go/src/cmd/vet/internal/
+drwxr-xr-x	root/root	usr/lib/go/src/cmd/vet/internal/cfg/
+-rw-r--r--	root/root	usr/lib/go/src/cmd/vet/internal/cfg/builder.go
+-rw-r--r--	root/root	usr/lib/go/src/cmd/vet/internal/cfg/cfg.go
+-rw-r--r--	root/root	usr/lib/go/src/cmd/vet/internal/cfg/cfg_test.go
 drwxr-xr-x	root/root	usr/lib/go/src/cmd/vet/internal/whitelist/
 -rw-r--r--	root/root	usr/lib/go/src/cmd/vet/internal/whitelist/whitelist.go
+-rw-r--r--	root/root	usr/lib/go/src/cmd/vet/lostcancel.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/vet/main.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/vet/method.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/vet/nilfunc.go
@@ -2355,6 +2361,7 @@ drwxr-xr-x	root/root	usr/lib/go/src/cmd/vet/testdata/divergent/
 -rw-r--r--	root/root	usr/lib/go/src/cmd/vet/testdata/divergent/buf_test.go
 drwxr-xr-x	root/root	usr/lib/go/src/cmd/vet/testdata/incomplete/
 -rw-r--r--	root/root	usr/lib/go/src/cmd/vet/testdata/incomplete/examples_test.go
+-rw-r--r--	root/root	usr/lib/go/src/cmd/vet/testdata/lostcancel.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/vet/testdata/method.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/vet/testdata/nilfunc.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/vet/testdata/print.go
@@ -2866,6 +2873,7 @@ drwxr-xr-x	root/root	usr/lib/go/src/debug/pe/
 -rw-r--r--	root/root	usr/lib/go/src/debug/pe/symbol.go
 drwxr-xr-x	root/root	usr/lib/go/src/debug/pe/testdata/
 -rw-r--r--	root/root	usr/lib/go/src/debug/pe/testdata/gcc-386-mingw-exec
+-rw-r--r--	root/root	usr/lib/go/src/debug/pe/testdata/gcc-386-mingw-no-symbols-exec
 -rw-r--r--	root/root	usr/lib/go/src/debug/pe/testdata/gcc-386-mingw-obj
 -rw-r--r--	root/root	usr/lib/go/src/debug/pe/testdata/gcc-amd64-mingw-exec
 -rw-r--r--	root/root	usr/lib/go/src/debug/pe/testdata/gcc-amd64-mingw-obj
@@ -4198,6 +4206,9 @@ drwxr-xr-x	root/root	usr/lib/go/src/os/user/
 -rw-r--r--	root/root	usr/lib/go/src/os/user/lookup_windows.go
 -rw-r--r--	root/root	usr/lib/go/src/os/user/user.go
 -rw-r--r--	root/root	usr/lib/go/src/os/user/user_test.go
+-rw-r--r--	root/root	usr/lib/go/src/os/wait_unimp.go
+-rw-r--r--	root/root	usr/lib/go/src/os/wait_wait6.go
+-rw-r--r--	root/root	usr/lib/go/src/os/wait_waitid.go
 drwxr-xr-x	root/root	usr/lib/go/src/path/
 -rw-r--r--	root/root	usr/lib/go/src/path/example_test.go
 drwxr-xr-x	root/root	usr/lib/go/src/path/filepath/
@@ -4378,6 +4389,7 @@ drwxr-xr-x	root/root	usr/lib/go/src/runtime/cgo/
 -rw-r--r--	root/root	usr/lib/go/src/runtime/cpuprof.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/cputicks.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/crash_cgo_test.go
+-rw-r--r--	root/root	usr/lib/go/src/runtime/crash_nonunix_test.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/crash_test.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/crash_unix_test.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/debug.go
@@ -4513,6 +4525,8 @@ drwxr-xr-x	root/root	usr/lib/go/src/runtime/internal/sys/
 -rw-r--r--	root/root	usr/lib/go/src/runtime/internal/sys/arch_s390x.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/internal/sys/gengoos.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/internal/sys/intrinsics.go
+-rw-r--r--	root/root	usr/lib/go/src/runtime/internal/sys/intrinsics_386.s
+-rw-r--r--	root/root	usr/lib/go/src/runtime/internal/sys/intrinsics_stubs.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/internal/sys/intrinsics_test.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/internal/sys/stubs.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/internal/sys/sys.go
@@ -4660,9 +4674,11 @@ drwxr-xr-x	root/root	usr/lib/go/src/runtime/race/
 -rw-r--r--	root/root	usr/lib/go/src/runtime/race/race_darwin_amd64.syso
 -rw-r--r--	root/root	usr/lib/go/src/runtime/race/race_freebsd_amd64.syso
 -rw-r--r--	root/root	usr/lib/go/src/runtime/race/race_linux_amd64.syso
+-rw-r--r--	root/root	usr/lib/go/src/runtime/race/race_linux_test.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/race/race_test.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/race/race_unix_test.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/race/race_windows_amd64.syso
+-rw-r--r--	root/root	usr/lib/go/src/runtime/race/race_windows_test.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/race/sched_test.go
 drwxr-xr-x	root/root	usr/lib/go/src/runtime/race/testdata/
 -rw-r--r--	root/root	usr/lib/go/src/runtime/race/testdata/atomic_test.go
@@ -4848,6 +4864,7 @@ drwxr-xr-x	root/root	usr/lib/go/src/runtime/testdata/testprog/
 -rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprog/deadlock.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprog/gc.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprog/main.go
+-rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprog/memprof.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprog/misc.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprog/signal.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprog/stringconcat.go
@@ -4867,6 +4884,7 @@ drwxr-xr-x	root/root	usr/lib/go/src/runtime/testdata/testprogcgo/
 -rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprogcgo/threadpanic.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprogcgo/threadpanic_unix.c
 -rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprogcgo/threadpanic_windows.c
+-rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprogcgo/threadpprof.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprogcgo/threadprof.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprogcgo/traceback.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/testdata/testprogcgo/tracebackctxt.go
@@ -6361,6 +6379,23 @@ drwxr-xr-x	root/root	usr/lib/go/test/fixedbugs/issue15920.dir/
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue15920.dir/a.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue15920.dir/b.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue15920.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue15926.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue15961.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue15975.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue15988.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue16008.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue16016.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue16037_run.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue16095.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue16130.go
+drwxr-xr-x	root/root	usr/lib/go/test/fixedbugs/issue16133.dir/
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue16133.dir/a1.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue16133.dir/a2.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue16133.dir/b.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue16133.dir/c.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue16133.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue16193.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue16249.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue2615.go
 drwxr-xr-x	root/root	usr/lib/go/test/fixedbugs/issue3552.dir/
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue3552.dir/one.go
@@ -6975,6 +7010,11 @@ drwxr-xr-x	root/root	usr/lib/go/test/syntax/
 -rw-r--r--	root/root	usr/lib/go/test/typeswitch1.go
 -rw-r--r--	root/root	usr/lib/go/test/typeswitch2.go
 -rw-r--r--	root/root	usr/lib/go/test/typeswitch3.go
+drwxr-xr-x	root/root	usr/lib/go/test/uintptrescapes.dir/
+-rw-r--r--	root/root	usr/lib/go/test/uintptrescapes.dir/a.go
+-rw-r--r--	root/root	usr/lib/go/test/uintptrescapes.dir/main.go
+-rw-r--r--	root/root	usr/lib/go/test/uintptrescapes.go
+-rw-r--r--	root/root	usr/lib/go/test/uintptrescapes2.go
 -rw-r--r--	root/root	usr/lib/go/test/undef.go
 -rw-r--r--	root/root	usr/lib/go/test/utf.go
 -rw-r--r--	root/root	usr/lib/go/test/varerr.go
