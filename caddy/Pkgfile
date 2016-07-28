@@ -12,14 +12,22 @@ source=(
 )
 
 build() {
-	cd $PKGMK_SOURCE_DIR
-	mkdir -p $name && cd $name
-
 	export GOPATH=$(pwd)
+	go get -u -v -fix github.com/mholt/caddy
+	go get -u -v -fix github.com/caddyserver/caddydev
 	go get -u -v -fix blitznote.com/src/caddy.upload
-	cd src/blitznote.com/src/caddy.upload
 
-	install -Dm755 Caddyfile $PKG/usr/sbin/caddy
+	# Why is this needed?
+	go get -u -v -fix github.com/dustin/go-humanize
+	go get -u -v -fix github.com/BurntSushi/toml
+	go get -u -v -fix github.com/gorilla/websocket
+	go get -u -v -fix github.com/hashicorp/go-syslog
+	go get -u -v -fix github.com/jimstudt/http-authentication/basic
+	go get -u -v -fix gopkg.in/yaml.v2
+
+	$SRC/bin/caddydev -o executable -s src/blitznote.com/src/caddy.upload src/blitznote.com/src/caddy.upload
+
+	install -Dm755 executable $PKG/usr/sbin/caddy
 	install -Dm755 $SRC/caddy $PKG/etc/rc.d/caddy
 	install -Dm644 $SRC/caddy.conf $PKG/etc/caddy/caddy.conf
 }
