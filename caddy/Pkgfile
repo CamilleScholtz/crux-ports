@@ -15,7 +15,7 @@ build() {
 	export GOPATH=$(pwd)
 	go get -u -v -fix github.com/mholt/caddy
 	go get -u -v -fix github.com/caddyserver/caddydev
-	go get -u -v -fix blitznote.com/src/caddy.upload
+	go get -u -v -fix github.com/onodera-punpun/caddy.upload
 
 	# Why is this needed?
 	go get -u -v -fix github.com/dustin/go-humanize
@@ -25,7 +25,7 @@ build() {
 	go get -u -v -fix github.com/jimstudt/http-authentication/basic
 	go get -u -v -fix gopkg.in/yaml.v2
 
-	$SRC/bin/caddydev -o executable -s src/blitznote.com/src/caddy.upload src/blitznote.com/src/caddy.upload
+	$SRC/bin/caddydev -o executable -s src/github.com/onodera-punpun/caddy.upload src/blitznote.com/src/caddy.upload
 
 	install -Dm755 executable $PKG/usr/sbin/caddy
 	install -Dm755 $SRC/caddy $PKG/etc/rc.d/caddy
