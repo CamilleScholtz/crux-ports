@@ -1,0 +1,25 @@
+# Description: Fast, cross-platform HTTP/2 web server with automatic HTTPS. (git checkout)
+# URL:         https://caddyserver.com
+# Maintainer:  onodera, https://github.com/6c37/crux-ports-git/issues
+# Depends on:  go
+
+name=caddy
+version=git
+release=1
+source=(
+	caddy.conf
+	caddy
+)
+
+build() {
+	cd $PKGMK_SOURCE_DIR
+	mkdir -p $name && cd $name
+
+	export GOPATH=$(pwd)
+	go get -u -v -fix blitznote.com/src/caddy.upload
+	cd src/blitznote.com/src/caddy.upload
+
+	install -Dm755 Caddyfile $PKG/usr/sbin/caddy
+	install -Dm755 $SRC/caddy $PKG/etc/rc.d/caddy
+	install -Dm644 $SRC/caddy.conf $PKG/etc/caddy/caddy.conf
+}
