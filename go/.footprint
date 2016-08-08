@@ -3810,6 +3810,7 @@ drwxr-xr-x	root/root	usr/lib/go/src/net/
 -rw-r--r--	root/root	usr/lib/go/src/net/conn_test.go
 -rw-r--r--	root/root	usr/lib/go/src/net/dial.go
 -rw-r--r--	root/root	usr/lib/go/src/net/dial_test.go
+-rw-r--r--	root/root	usr/lib/go/src/net/dial_unix_test.go
 -rw-r--r--	root/root	usr/lib/go/src/net/dnsclient.go
 -rw-r--r--	root/root	usr/lib/go/src/net/dnsclient_test.go
 -rw-r--r--	root/root	usr/lib/go/src/net/dnsclient_unix.go
@@ -6397,6 +6398,7 @@ drwxr-xr-x	root/root	usr/lib/go/test/fixedbugs/issue16133.dir/
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue16133.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue16193.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue16249.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue16515.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue2615.go
 drwxr-xr-x	root/root	usr/lib/go/test/fixedbugs/issue3552.dir/
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue3552.dir/one.go
