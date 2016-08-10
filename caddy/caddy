@@ -10,8 +10,12 @@ OPTS="-conf /etc/caddy/caddy.conf -agree --pidfile $PID"
 
 case $1 in
 start)
-	sleep 1
+	# Set the CADDYPATH; Let's Encrypt certificates will be written to this directory.
+	export CADDYPATH=/etc/caddy/ssl
+
+	# Set the ulimits
 	ulimit -n 8192
+
 	$SSD --background --start --pidfile $PID --exec $PROG -- $OPTS
 	;;
 stop)
