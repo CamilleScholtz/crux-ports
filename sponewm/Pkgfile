@@ -10,7 +10,7 @@ source=()
 
 build() {
 	export GOPATH=$(pwd)
-	go get -u -v -fix github.com/onodera-punpun/sponewm
+	go get -u -v -fix -ldflags "-s" github.com/onodera-punpun/sponewm
 
 	install -Dm755 bin/sponewm $PKG/usr/bin/sponewm
 }
