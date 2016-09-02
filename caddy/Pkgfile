@@ -20,6 +20,7 @@ build() {
 	# Why is this needed?
 	go get -u -v -fix github.com/dustin/go-humanize
 	go get -u -v -fix github.com/BurntSushi/toml
+	go get -u -v -fix github.com/naoina/toml
 	go get -u -v -fix github.com/gorilla/websocket
 	go get -u -v -fix github.com/hashicorp/go-syslog
 	go get -u -v -fix github.com/jimstudt/http-authentication/basic
