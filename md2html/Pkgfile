@@ -1,0 +1,17 @@
+# Description: Convert markdown to github markdown html.
+# URL:         https://punpun.xyz/9hte.png
+
+# Maintainer:  onodera, https://github.com/onodra-punpun/crux-ports/issues
+# Depends on:  go
+
+name=md2html
+version=git
+release=1
+source=()
+
+build() {
+	export GOPATH=$(pwd)
+	go get -u -v -fix github.com/onodera-punpun/md2html
+
+	install -Dm755 bin/md2html $PKG/usr/bin/md2html
+}
