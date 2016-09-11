@@ -1,36 +1,20 @@
-# Description: Fast, cross-platform HTTP/2 web server with automatic HTTPS. (git checkout)
+# Description: Fast, cross-platform HTTP/2 web server with automatic HTTPS.
 # URL:         https://caddyserver.com
 # Maintainer:  onodera, https://github.com/6c37/crux-ports-git/issues
-# Depends on:  go
+# Depends on:  
 
 name=caddy
 version=git
 release=1
 source=(
+	"https://caddyserver.com/download/build?os=linux&arch=amd64&features=search%2Cupload%2Cvultr"
 	caddy.conf
-	caddy
+	caddyd
 )
 
 build() {
-	export GOPATH=$(pwd)
-	go get -u -v -fix github.com/mholt/caddy
-	go get -u -v -fix github.com/caddyserver/caddydev
-	go get -u -v -fix github.com/onodera-punpun/caddy.upload
-	go get -u -v -fix github.com/pedronasser/caddy-search
-
-	# Why is this needed?
-	go get -u -v -fix github.com/dustin/go-humanize
-	go get -u -v -fix github.com/BurntSushi/toml
-	go get -u -v -fix github.com/naoina/toml
-	go get -u -v -fix github.com/gorilla/websocket
-	go get -u -v -fix github.com/hashicorp/go-syslog
-	go get -u -v -fix github.com/jimstudt/http-authentication/basic
-	go get -u -v -fix gopkg.in/yaml.v2
-
-	#$SRC/bin/caddydev -o executable -s src/github.com/onodera-punpun/caddy.upload src/blitznote.com/src/caddy.upload
-	$SRC/bin/caddydev -o executable -s src/github.com/onodera-punpun/caddy.upload src/github.com/pedronasser/caddy-search
-
-	install -Dm755 executable $PKG/usr/sbin/caddy
-	install -Dm755 $SRC/caddy $PKG/etc/rc.d/caddy
-	install -Dm644 $SRC/caddy.conf $PKG/etc/caddy/caddy.conf
+	bsdtar -xf "build?os=linux&arch=amd64&features=search%2Cupload%2Cvultr"
+	install -Dm755 caddy $PKG/usr/sbin/caddy                                                                                          
+	install -Dm755 caddyd $PKG/etc/rc.d/caddy                                                                                          
+	install -Dm644 caddy.conf $PKG/etc/caddy/caddy.conf     
 }
