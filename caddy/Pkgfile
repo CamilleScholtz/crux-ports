@@ -18,7 +18,12 @@ build() {
 
 	cd src/github.com/mholt/caddy/caddy
 	patch caddymain/run.go < $SRC/plugins.patch
-	go get -d
+
+	go get -d -v
+
+	# More verbose building
+	sed -i "s/go build/go build -v/" build.bash
+
 	./build.bash
 
 	install -Dm755 caddy $PKG/usr/sbin/caddy
