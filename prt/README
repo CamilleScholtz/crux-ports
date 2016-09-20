@@ -1,0 +1,5 @@
+prt uses fakeroot to build ports, run the following commands
+to add a pkgmk user.
+
+useradd -m -s /bin/false pkgmk
+chown pkgmk /usr/ports/{distfiles,packages,work}
