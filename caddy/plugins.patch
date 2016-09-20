@@ -6,7 +6,7 @@
  	// This is where other plugins get plugged in (imported)
 +	_ "github.com/onodera-punpun/caddy.upload"
 +	_ "github.com/pedronasser/caddy-search"
-+	_ "github.com/hacdias/caddy-minify"
++	_ "github.com/FTwOoO/caddy-vpn"
  )
  
  func init() {
