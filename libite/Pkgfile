@@ -1,10 +1,10 @@
-# Description: Lightweight event loop library.
-# URL:         https://github.com/troglobit/libuev
+# Description: That missing frog DNA you've been looking for.
+# URL:         https://github.com/troglobit/libite
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
 # Depends on:  
 
 name=libuev
-version=1.4.2
+version=1.8.2
 release=1
 source=(https://github.com/troglobit/$name/archive/v$version.tar.gz)
 

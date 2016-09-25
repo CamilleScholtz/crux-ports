@@ -1,0 +1,20 @@
+# Description: Fast, extensible init for Linux systems.
+# URL:         https://github.com/troglobit/finit
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  
+
+name=finit
+version=3.0-rc1
+release=1
+source=(https://github.com/troglobit/$name/archive/$version.tar.gz)
+
+build () {
+	cd $name-$version
+
+	./autogen.sh
+	./configure \
+		--enable-alsa-utils-plugin \
+		--enable-dbus-plugin
+
+	make DESTDIR=$PKG install
+}
