@@ -3,7 +3,7 @@
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
 # Depends on:  
 
-name=libuev
+name=libite
 version=1.8.2
 release=1
 source=(https://github.com/troglobit/$name/archive/v$version.tar.gz)

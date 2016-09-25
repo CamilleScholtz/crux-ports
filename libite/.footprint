@@ -1,14 +1,19 @@
 drwxr-xr-x	root/root	usr/
 drwxr-xr-x	root/root	usr/include/
-drwxr-xr-x	root/root	usr/include/uev/
--rw-r--r--	root/root	usr/include/uev/private.h
--rw-r--r--	root/root	usr/include/uev/queue.h
--rw-r--r--	root/root	usr/include/uev/uev.h
+drwxr-xr-x	root/root	usr/include/lite/
+-rw-r--r--	root/root	usr/include/lite/conio.h
+-rw-r--r--	root/root	usr/include/lite/lite.h
+-rw-r--r--	root/root	usr/include/lite/queue.h
+-rw-r--r--	root/root	usr/include/lite/strdupa.h
+-rw-r--r--	root/root	usr/include/lite/strlite.h
+-rw-r--r--	root/root	usr/include/lite/strndupa.h
+-rw-r--r--	root/root	usr/include/lite/strnlen.h
+-rw-r--r--	root/root	usr/include/lite/tree.h
 drwxr-xr-x	root/root	usr/lib/
--rw-r--r--	root/root	usr/lib/libuev.a
--rwxr-xr-x	root/root	usr/lib/libuev.la
-lrwxrwxrwx	root/root	usr/lib/libuev.so -> libuev.so.1.0.1
-lrwxrwxrwx	root/root	usr/lib/libuev.so.1 -> libuev.so.1.0.1
--rwxr-xr-x	root/root	usr/lib/libuev.so.1.0.1
+-rw-r--r--	root/root	usr/lib/libite.a
+-rwxr-xr-x	root/root	usr/lib/libite.la
+lrwxrwxrwx	root/root	usr/lib/libite.so -> libite.so.3.0.0
+lrwxrwxrwx	root/root	usr/lib/libite.so.3 -> libite.so.3.0.0
+-rwxr-xr-x	root/root	usr/lib/libite.so.3.0.0
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
--rw-r--r--	root/root	usr/lib/pkgconfig/libuev.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/libite.pc
