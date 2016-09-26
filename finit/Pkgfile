@@ -1,20 +1,30 @@
 # Description: Fast, extensible init for Linux systems.
 # URL:         https://github.com/troglobit/finit
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
-# Depends on:  
+# Depends on:  libuev libite
 
 name=finit
 version=3.0-rc1
 release=1
-source=(https://github.com/troglobit/$name/archive/$version.tar.gz)
+source=(
+	https://github.com/troglobit/$name/archive/$version.tar.gz
+	finit.conf
+)
 
 build () {
 	cd $name-$version
 
 	./autogen.sh
-	./configure \
+	./configure --prefix=/usr \
+		--sbindir=/sbin \
+		--enable-rw-rootfs \
 		--enable-alsa-utils-plugin \
-		--enable-dbus-plugin
+		--enable-dbus-plugin \
+		--with-heading="$(crux)"
 
 	make DESTDIR=$PKG install
+	install -Dm644 $SRC/finit.conf $PKG/etc/finit.conf
+	ln -s $PKG/sbin/finit /sbin/init
+
+	rm -rf $PKG/usr/share
 }

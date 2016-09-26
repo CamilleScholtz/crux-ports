@@ -1,32 +1,32 @@
 drwxr-xr-x	root/root	etc/
-drwxr-xr-x	root/root	etc/prt/
--rw-r--r--	root/root	etc/prt/config
-drwxr-xr-x	root/root	etc/prt/pull/
--rw-r--r--	root/root	etc/prt/pull/6c37
--rw-r--r--	root/root	etc/prt/pull/6c37-git
--rw-r--r--	root/root	etc/prt/pull/contrib
--rw-r--r--	root/root	etc/prt/pull/core
--rw-r--r--	root/root	etc/prt/pull/opt
--rw-r--r--	root/root	etc/prt/pull/xorg
+-rw-r--r--	root/root	etc/finit.conf
+drwxr-xr-x	root/root	sbin/
+-rwxr-xr-x	root/root	sbin/finit
+lrwxrwxrwx	root/root	sbin/halt -> reboot
+lrwxrwxrwx	root/root	sbin/init -> finit
+-rwxr-xr-x	root/root	sbin/initctl
+-rwxr-xr-x	root/root	sbin/reboot
+lrwxrwxrwx	root/root	sbin/shutdown -> reboot
+lrwxrwxrwx	root/root	sbin/suspend -> reboot
+lrwxrwxrwx	root/root	sbin/telinit -> finit
 drwxr-xr-x	root/root	usr/
-drwxr-xr-x	root/root	usr/bin/
--rwxr-xr-x	root/root	usr/bin/prt
-drwxr-xr-x	root/root	usr/share/
-drwxr-xr-x	root/root	usr/share/fish/
-drwxr-xr-x	root/root	usr/share/fish/completions/
--rw-r--r--	root/root	usr/share/fish/completions/cdp.fish
--rw-r--r--	root/root	usr/share/fish/completions/prt.fish
-drwxr-xr-x	root/root	usr/share/fish/functions/
--rw-r--r--	root/root	usr/share/fish/functions/cdp.fish
-drwxr-xr-x	root/root	usr/share/prt/
--rwxr-xr-x	root/root	usr/share/prt/build
--rwxr-xr-x	root/root	usr/share/prt/depends
--rwxr-xr-x	root/root	usr/share/prt/diff
--rwxr-xr-x	root/root	usr/share/prt/info
--rwxr-xr-x	root/root	usr/share/prt/list
--rwxr-xr-x	root/root	usr/share/prt/location
--rwxr-xr-x	root/root	usr/share/prt/patch
--rwxr-xr-x	root/root	usr/share/prt/provide
--rwxr-xr-x	root/root	usr/share/prt/pull
--rwxr-xr-x	root/root	usr/share/prt/sysup
--rwxr-xr-x	root/root	usr/share/prt/util
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/finit/
+-rw-r--r--	root/root	usr/include/finit/cond.h
+-rw-r--r--	root/root	usr/include/finit/finit.h
+-rw-r--r--	root/root	usr/include/finit/helpers.h
+-rw-r--r--	root/root	usr/include/finit/inetd.h
+-rw-r--r--	root/root	usr/include/finit/plugin.h
+-rw-r--r--	root/root	usr/include/finit/svc.h
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/finit/
+drwxr-xr-x	root/root	usr/lib/finit/plugins/
+-rwxr-xr-x	root/root	usr/lib/finit/plugins/alsa-utils.so
+-rwxr-xr-x	root/root	usr/lib/finit/plugins/bootmisc.so
+-rwxr-xr-x	root/root	usr/lib/finit/plugins/dbus.so
+-rwxr-xr-x	root/root	usr/lib/finit/plugins/hwclock.so
+-rwxr-xr-x	root/root	usr/lib/finit/plugins/initctl.so
+-rwxr-xr-x	root/root	usr/lib/finit/plugins/netlink.so
+-rwxr-xr-x	root/root	usr/lib/finit/plugins/pidfile.so
+-rwxr-xr-x	root/root	usr/lib/finit/plugins/tty.so
+-rwxr-xr-x	root/root	usr/lib/finit/plugins/urandom.so
