@@ -1,7 +1,7 @@
-# Description: CRUX port utilities without prt-get usage written in fish.
+# Description: CRUX port utilities without prt-get usage written in go.
 # URL:         https://github.com/onodera-punpun/prt-stuff
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
-# Depends on:  git getopts fakeroot
+# Depends on:  go
 
 name=prt
 version=git
@@ -9,14 +9,14 @@ release=1
 source=()
 
 build () {
-	cd $PKGMK_SOURCE_DIR
+	export GOPATH=$(pwd)
+	go get -d -u -v -fix github.com/onodera-punpun/$name
+	cd src/github.com/onodera-punpun/$name
 
-	if cd $name; then
-		git fetch -q; git reset --hard origin/master
-	else
-		git clone git://github.com/onodera-punpun/$name $name
-		cd $name
-	fi
+	sed -i 's:/home/onodera/code/go/src/github.com/onodera-punpun/prt/runtime/config.toml:/etc/prt/config.toml:' config/config.go
+	go build -v
 
-	make DESTDIR=$PKG install
+	install -Dm755 prt $PKG/usr/bin/prt
+	install -Dm644 runtime/config.toml $PKG/etc/prt/config.toml
+	install -Dm644 runtime/fish/functions/cdp.fish $PKG/usr/share/fish/functions/cdp.fish
 }
