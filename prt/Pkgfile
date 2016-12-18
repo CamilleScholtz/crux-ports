@@ -1,7 +1,8 @@
-# Description: CRUX port utilities without prt-get usage written in go.
-# URL:         https://github.com/onodera-punpun/prt-stuff
+# Description: CRUX port util e written in go.
+# URL:         https://github.com/onodera-punpun/prt
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
 # Depends on:  go
+# Optional:    fish
 
 name=prt
 version=git
