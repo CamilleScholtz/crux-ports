@@ -14,7 +14,6 @@ build () {
 	go get -d -u -v -fix github.com/onodera-punpun/$name
 	cd src/github.com/onodera-punpun/$name
 
-	sed -i 's:/home/onodera/code/go/src/github.com/onodera-punpun/prt/runtime/config.toml:/etc/prt/config.toml:' config/config.go
 	go build -v
 
 	install -Dm755 prt $PKG/usr/bin/prt
