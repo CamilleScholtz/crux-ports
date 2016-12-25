@@ -19,4 +19,6 @@ build () {
 	install -Dm755 prt $PKG/usr/bin/prt
 	install -Dm644 runtime/config.toml $PKG/etc/prt/config.toml
 	install -Dm644 runtime/fish/functions/cdp.fish $PKG/usr/share/fish/functions/cdp.fish
+	install -Dm644 runtime/fish/completions/prt.fish $PKG/usr/share/fish/completions/prt.fish
+	install -Dm644 runtime/fish/completions/cdp.fish $PKG/usr/share/fish/completions/cdp.fish
 }
