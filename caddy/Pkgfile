@@ -1,0 +1,40 @@
+# Description: Fast, cross-platform HTTP/2 web server with automatic HTTPS.
+# URL:         https://caddyserver.com
+# Maintainer:  6c37 Team, https://github.com/6c37/crux-ports-git/issues
+# Depends on:  go
+
+name=caddy
+version=git
+release=2
+source=(
+	plugins.patch
+	caddy.conf
+	caddy
+)
+
+build() {
+	export GOPATH=$(pwd)
+	go get -u -v -fix github.com/mholt/$name/$name
+
+	cd src/github.com/mholt/caddy/caddy
+
+	patch caddymain/run.go < $SRC/plugins.patch
+
+	go get -d -v
+
+	# More verbose building
+	sed -i "s/go build/go build -v/" build.bash
+
+	./build.bash
+
+	install -Dm755 caddy $PKG/usr/sbin/caddy
+	install -Dm755 $SRC/caddy $PKG/etc/rc.d/caddy
+	install -Dm644 $SRC/caddy.conf $PKG/etc/caddy/caddy.conf
+	install -d -g www -o caddy -m755 $PKG/srv/caddy
+	install -d -g www -o caddy -m755 $PKG/var/run/caddy
+
+	# caddy currently does not support dropping privileges so we
+	# change attributes with setcat to allow access to priv ports
+	# https://caddyserver.com/docs/faq
+	setcap cap_net_bind_service=+ep $PKG/usr/sbin/caddy
+}

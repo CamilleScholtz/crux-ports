@@ -1,0 +1,10 @@
+--- old.go	2016-09-12 18:57:59.638190164 +0200
++++ run.go	2016-09-12 18:59:07.619186152 +0200
+@@ -22,6 +22,7 @@
+ 
+ 	"github.com/mholt/caddy/caddytls"
+ 	// This is where other plugins get plugged in (imported)
++	_ "github.com/onodera-punpun/caddy.upload"
+ )
+ 
+ func init() {

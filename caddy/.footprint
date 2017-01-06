@@ -1,0 +1,13 @@
+drwxr-xr-x	root/root	etc/
+drwxr-xr-x	root/root	etc/caddy/
+-rw-r--r--	root/root	etc/caddy/caddy.conf
+drwxr-xr-x	root/root	etc/rc.d/
+-rwxr-xr-x	root/root	etc/rc.d/caddy
+drwxr-xr-x	root/root	srv/
+drwxr-xr-x	caddy/www	srv/caddy/
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/sbin/
+-rwxr-xr-x	root/root	usr/sbin/caddy
+drwxr-xr-x	root/root	var/
+drwxr-xr-x	root/root	var/run/
+drwxr-xr-x	caddy/www	var/run/caddy/

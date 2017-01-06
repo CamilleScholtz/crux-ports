@@ -1,0 +1,3 @@
+#!/bin/sh
+
+useradd -r -d /srv/caddy -s /bin/false -G www caddy
