@@ -3,7 +3,7 @@
 # Maintainer: Matt Housh, jaeger at crux dot ninja
 
 name=go
-version=1.8beta2
+version=1.8rc1
 release=1
 source=(https://storage.googleapis.com/golang/${name}${version}.linux-amd64.tar.gz \
     https://storage.googleapis.com/golang/${name}${version}.src.tar.gz \
