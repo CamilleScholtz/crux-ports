@@ -473,6 +473,7 @@ drwxr-xr-x	root/root	usr/lib/go/misc/cgo/testsanitizers/
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/testsanitizers/msan4.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/testsanitizers/msan5.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/testsanitizers/msan_fail.go
+-rw-r--r--	root/root	usr/lib/go/misc/cgo/testsanitizers/msan_shared.go
 -rwxr-xr-x	root/root	usr/lib/go/misc/cgo/testsanitizers/test.bash
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/testsanitizers/tsan.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/testsanitizers/tsan2.go
@@ -7064,6 +7065,7 @@ drwxr-xr-x	root/root	usr/lib/go/test/fixedbugs/issue16616.dir/
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue18410.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue18459.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue18661.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue18725.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue2615.go
 drwxr-xr-x	root/root	usr/lib/go/test/fixedbugs/issue3552.dir/
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue3552.dir/one.go
