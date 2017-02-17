@@ -2225,6 +2225,7 @@ drwxr-xr-x	root/root	usr/lib/go/src/cmd/go/testdata/testvendor2/src/p/
 drwxr-xr-x	root/root	usr/lib/go/src/cmd/go/testdata/testvendor2/vendor/
 drwxr-xr-x	root/root	usr/lib/go/src/cmd/go/testdata/testvendor2/vendor/x/
 -rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/testvendor2/vendor/x/x.go
+-rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/timeoutbench_test.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/go/testflag.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/go/testgo.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/go/tool.go
@@ -5921,6 +5922,7 @@ drwxr-xr-x	root/root	usr/lib/go/src/vendor/golang_org/x/crypto/chacha20poly1305/
 -rw-r--r--	root/root	usr/lib/go/src/vendor/golang_org/x/crypto/chacha20poly1305/internal/chacha20/chacha_generic.go
 -rw-r--r--	root/root	usr/lib/go/src/vendor/golang_org/x/crypto/chacha20poly1305/internal/chacha20/chacha_test.go
 drwxr-xr-x	root/root	usr/lib/go/src/vendor/golang_org/x/crypto/curve25519/
+-rw-r--r--	root/root	usr/lib/go/src/vendor/golang_org/x/crypto/curve25519/const_amd64.h
 -rw-r--r--	root/root	usr/lib/go/src/vendor/golang_org/x/crypto/curve25519/const_amd64.s
 -rw-r--r--	root/root	usr/lib/go/src/vendor/golang_org/x/crypto/curve25519/cswap_amd64.s
 -rw-r--r--	root/root	usr/lib/go/src/vendor/golang_org/x/crypto/curve25519/curve25519.go
@@ -7066,6 +7068,9 @@ drwxr-xr-x	root/root	usr/lib/go/test/fixedbugs/issue16616.dir/
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue18459.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue18661.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue18725.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue18808.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue18906.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue18915.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue2615.go
 drwxr-xr-x	root/root	usr/lib/go/test/fixedbugs/issue3552.dir/
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue3552.dir/one.go
