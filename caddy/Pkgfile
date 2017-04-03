@@ -18,8 +18,8 @@ build() {
 	go get -u -v -fix github.com/mholt/$name/$name
 
 	cd src/github.com/mholt/caddy/caddy
-
 	patch caddymain/run.go < $SRC/plugins.patch
+	ls ../
 	patch ../caddyhttp/httpserver/plugin.go < $SRC/punfed.patch
 
 	go get -d -v
