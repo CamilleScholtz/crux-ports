@@ -8,6 +8,7 @@ version=git
 release=2
 source=(
 	plugins.patch
+	punfed.patch
 	caddy.conf
 	caddy
 )
@@ -19,6 +20,7 @@ build() {
 	cd src/github.com/mholt/caddy/caddy
 
 	patch caddymain/run.go < $SRC/plugins.patch
+	patch ../caddyhttp/httpserver/plugin.go < $SRC/punfed.patch
 
 	go get -d -v
 

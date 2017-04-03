@@ -1,3 +1,4 @@
 241f70e6176ce4f416ae01f6fb128cfc  caddy
 5c9a7cf51d57d0237cae39d36702ce2b  caddy.conf
-fce6377ab21bc49f018446a24d865f2f  plugins.patch
+2d5fbc55c6d3308321c47cfa0854bffe  plugins.patch
+891d4005d046a4bcc6e66fd70707ae53  punfed.patch
