@@ -1,0 +1,25 @@
+# Description: Upload files/scrots/URLs to punpun.xyz or sr.ht.
+# URL:         https://github.com/onodera-punpun/punf
+# Maintainer:  onodera, https://github.com/onodra-punpun/crux-ports/issues
+# Depends on:  go xsel
+# Optional:    fish maim
+
+name=punf
+version=git
+release=1
+source=()
+
+build () {
+	export GOPATH=$(pwd)
+	go get -d -u -v -fix github.com/onodera-punpun/$name
+	cd src/github.com/onodera-punpun/$name
+
+	go build -v
+
+	install -Dm755 punf $PKG/usr/bin/punf
+
+	# Install shell files
+	if [[ -e '/usr/bin/fish' ]]; then
+		install -Dm644 runtime/fish/completions/punf.fish $PKG/usr/share/fish/completions/punf.fish
+	fi
+}
