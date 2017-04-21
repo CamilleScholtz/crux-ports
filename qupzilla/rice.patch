@@ -1,0 +1,68 @@
+diff -ruN orig/src/lib/navigation/navigationcontainer.cpp src/lib/navigation/navigationcontainer.cpp
+--- orig/src/lib/navigation/navigationcontainer.cpp	2017-04-21 19:59:58.960041900 +0200
++++ src/lib/navigation/navigationcontainer.cpp	2017-04-21 19:48:02.430040635 +0200
+@@ -53,7 +53,7 @@
+
+     m_layout->removeWidget(m_tabBar);
+     m_layout->insertWidget(enable ? 0 : m_layout->count(), m_tabBar);
+-    m_layout->setContentsMargins(0, enable ? 2 : 0, 0, 0);
++    m_layout->setContentsMargins(0, enable ? 0 : 0, 0, 0);
+
+     setUpdatesEnabled(true);
+ }
+diff -ruN orig/src/lib/tabwidget/tabbar.cpp src/lib/tabwidget/tabbar.cpp
+--- orig/src/lib/tabwidget/tabbar.cpp	2017-04-21 19:59:58.970041900 +0200
++++ src/lib/tabwidget/tabbar.cpp	2017-04-21 19:55:08.660041387 +0200
+@@ -299,7 +299,7 @@
+         return 100;
+
+     case ComboTabBar::NormalTabMaximumWidth:
+-        return 250;
++        return 1920;
+
+     case ComboTabBar::ExtraReservedWidth:
+         return m_tabWidget->extraReservedWidth();
+@@ -321,18 +321,7 @@
+
+ void TabBar::showCloseButton(int index)
+ {
+-    if (!validIndex(index)) {
+-        return;
+-    }
+-
+-    WebTab* webTab = qobject_cast<WebTab*>(m_tabWidget->widget(index));
+-    QAbstractButton* button = qobject_cast<QAbstractButton*>(tabButton(index, closeButtonPosition()));
+-
+-    if (button || (webTab && webTab->isPinned())) {
+-        return;
+-    }
+-
+-    insertCloseButton(index);
++    return;
+ }
+
+ void TabBar::contextMenuEvent(QContextMenuEvent* event)
+diff -ruN orig/src/lib/tabwidget/tabicon.cpp src/lib/tabwidget/tabicon.cpp
+--- orig/src/lib/tabwidget/tabicon.cpp	2017-04-21 19:59:58.970041900 +0200
++++ src/lib/tabwidget/tabicon.cpp	2017-04-21 19:36:19.180039394 +0200
+@@ -114,19 +114,7 @@
+
+ void TabIcon::show()
+ {
+-    if (!shouldBeVisible()) {
+-        return;
+-    }
+-
+-    m_hideTimer->stop();
+-
+-    if (isVisible()) {
+-        return;
+-    }
+-
+-    setFixedSize(16, 16);
+-    emit resized();
+-    QWidget::show();
++    return;
+ }
+
+ void TabIcon::hide()
