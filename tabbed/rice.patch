@@ -1,0 +1,26 @@
+--- waa/tabbed.c	2017-04-27 00:33:17.230076775 +0200
++++ tabbed.c	2017-04-26 16:05:57.250023063 +0200
+@@ -382,12 +382,13 @@
+ 	olen = strlen(text);
+ 	h = dc.font.ascent + dc.font.descent;
+ 	y = dc.y + (dc.h / 2) - (h / 2) + dc.font.ascent;
+-	x = dc.x + (h / 2);
+ 
+ 	/* shorten text if necessary */
+ 	for (len = MIN(olen, sizeof(buf));
+ 		len && textnw(text, len) > dc.w - h; len--);
+ 
++	x = dc.x + (dc.w / 2) - ((len * 8) / 2);
++
+ 	if (!len)
+ 		return;
+ 
+@@ -969,7 +970,7 @@
+ 	screen = DefaultScreen(dpy);
+ 	root = RootWindow(dpy, screen);
+ 	initfont(font);
+-	bh = dc.h = dc.font.height + 2;
++	bh = dc.h = 40;
+ 
+ 	/* init atoms */
+ 	wmatom[WMDelete] = XInternAtom(dpy, "WM_DELETE_WINDOW", False);

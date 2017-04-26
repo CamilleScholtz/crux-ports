@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]        = "monospace:size=9";
+static const char font[]        = "dina";
 static const char* normbgcolor  = "#021B21";
 static const char* normfgcolor  = "#234149";
 static const char* selbgcolor   = "#021B21";
