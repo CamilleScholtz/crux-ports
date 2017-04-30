@@ -1,0 +1,31 @@
+# Description: Simple WebKit2GTK+ Browser.
+# URL:         https://github.com/vain/lariza
+# Maintainer:  onodera, https://github.com/onodra-punpun/crux-ports/issues
+# Depends on:  webkitgtk tabbed
+
+name=lariza
+version=git
+release=1
+source=()
+
+download_git() {
+	if [[ -d $PKGMK_SOURCE_DIR/$name ]]; then
+		git -C $PKGMK_SOURCE_DIR/$name fetch --depth=1
+		git -C $PKGMK_SOURCE_DIR/$name clean -f
+		git -C $PKGMK_SOURCE_DIR/$name reset --hard origin/$2
+	else
+		git -C $PKGMK_SOURCE_DIR clone --depth=1 $1 -b $2 $name
+	fi
+
+	cp -r $PKGMK_SOURCE_DIR/$name $PKGMK_WORK_DIR/src/$name
+}
+
+build() {
+	download_git https://github.com/onodera-punpun/$name master
+	cd $name
+
+	make
+	make DESTDIR=$PKG prefix=/usr install
+
+	install -Dm644 we_adblock.so $PKG/usr/lib/lariza/web_extensions/we_adblock.so
+}
