@@ -76,6 +76,11 @@ drwxr-xr-x	root/root	usr/lib/go/doc/devel/
 -rw-r--r--	root/root	usr/lib/go/doc/devel/release.html
 -rw-r--r--	root/root	usr/lib/go/doc/devel/weekly.html
 -rw-r--r--	root/root	usr/lib/go/doc/docs.html
+-rw-r--r--	root/root	usr/lib/go/doc/editors.html
+drwxr-xr-x	root/root	usr/lib/go/doc/editors/
+-rw-r--r--	root/root	usr/lib/go/doc/editors/gogland.png
+-rw-r--r--	root/root	usr/lib/go/doc/editors/vimgo.png
+-rw-r--r--	root/root	usr/lib/go/doc/editors/vscodego.png
 -rw-r--r--	root/root	usr/lib/go/doc/effective_go.html
 -rw-r--r--	root/root	usr/lib/go/doc/gccgo_contribute.html
 -rw-r--r--	root/root	usr/lib/go/doc/gccgo_install.html
@@ -289,6 +294,7 @@ drwxr-xr-x	root/root	usr/lib/go/misc/cgo/test/gcc68255/
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/test/issue18126.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/test/issue18146.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/test/issue18720.go
+-rw-r--r--	root/root	usr/lib/go/misc/cgo/test/issue20129.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/test/issue20266.go
 drwxr-xr-x	root/root	usr/lib/go/misc/cgo/test/issue20266/
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/test/issue20266/issue20266.h
@@ -486,6 +492,7 @@ drwxr-xr-x	root/root	usr/lib/go/misc/cgo/testsanitizers/
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/testsanitizers/tsan.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/testsanitizers/tsan10.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/testsanitizers/tsan11.go
+-rw-r--r--	root/root	usr/lib/go/misc/cgo/testsanitizers/tsan12.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/testsanitizers/tsan2.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/testsanitizers/tsan3.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/testsanitizers/tsan4.go
@@ -1139,6 +1146,7 @@ drwxr-xr-x	root/root	usr/lib/go/pkg/bootstrap/src/bootstrap/math/bits/
 -rw-r--r--	root/root	usr/lib/go/pkg/bootstrap/src/bootstrap/math/bits/bits.go
 -rw-r--r--	root/root	usr/lib/go/pkg/bootstrap/src/bootstrap/math/bits/bits_tables.go
 -rw-r--r--	root/root	usr/lib/go/pkg/bootstrap/src/bootstrap/math/bits/bits_test.go
+-rw-r--r--	root/root	usr/lib/go/pkg/bootstrap/src/bootstrap/math/bits/example_test.go
 -rw-r--r--	root/root	usr/lib/go/pkg/bootstrap/src/bootstrap/math/bits/make_tables.go
 drwxr-xr-x	root/root	usr/lib/go/pkg/include/
 -rw-r--r--	root/root	usr/lib/go/pkg/include/asm_ppc64x.h
@@ -1655,6 +1663,7 @@ drwxr-xr-x	root/root	usr/lib/go/src/cmd/asm/internal/asm/testdata/
 -rw-r--r--	root/root	usr/lib/go/src/cmd/asm/internal/asm/testdata/amd64error.s
 -rw-r--r--	root/root	usr/lib/go/src/cmd/asm/internal/asm/testdata/arm.s
 -rw-r--r--	root/root	usr/lib/go/src/cmd/asm/internal/asm/testdata/arm64.s
+-rw-r--r--	root/root	usr/lib/go/src/cmd/asm/internal/asm/testdata/arm64enc.s
 -rw-r--r--	root/root	usr/lib/go/src/cmd/asm/internal/asm/testdata/armerror.s
 -rw-r--r--	root/root	usr/lib/go/src/cmd/asm/internal/asm/testdata/armv6.s
 -rw-r--r--	root/root	usr/lib/go/src/cmd/asm/internal/asm/testdata/mips.s
@@ -2135,7 +2144,6 @@ drwxr-xr-x	root/root	usr/lib/go/src/cmd/go/testdata/importcom/src/wrongplace/
 -rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/importcom/src/wrongplace/x.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/importcom/works.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/importcom/wrongplace.go
--rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/inprogress_interrupt_test.go
 drwxr-xr-x	root/root	usr/lib/go/src/cmd/go/testdata/local/
 -rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/local/easy.go
 drwxr-xr-x	root/root	usr/lib/go/src/cmd/go/testdata/local/easysub/
@@ -4333,6 +4341,8 @@ drwxr-xr-x	root/root	usr/lib/go/src/io/ioutil/
 -rw-r--r--	root/root	usr/lib/go/src/io/ioutil/ioutil_test.go
 -rw-r--r--	root/root	usr/lib/go/src/io/ioutil/tempfile.go
 -rw-r--r--	root/root	usr/lib/go/src/io/ioutil/tempfile_test.go
+drwxr-xr-x	root/root	usr/lib/go/src/io/ioutil/testdata/
+-rw-r--r--	root/root	usr/lib/go/src/io/ioutil/testdata/hello
 -rw-r--r--	root/root	usr/lib/go/src/io/multi.go
 -rw-r--r--	root/root	usr/lib/go/src/io/multi_test.go
 -rw-r--r--	root/root	usr/lib/go/src/io/pipe.go
@@ -4439,6 +4449,7 @@ drwxr-xr-x	root/root	usr/lib/go/src/math/bits/
 -rw-r--r--	root/root	usr/lib/go/src/math/bits/bits.go
 -rw-r--r--	root/root	usr/lib/go/src/math/bits/bits_tables.go
 -rw-r--r--	root/root	usr/lib/go/src/math/bits/bits_test.go
+-rw-r--r--	root/root	usr/lib/go/src/math/bits/example_test.go
 -rw-r--r--	root/root	usr/lib/go/src/math/bits/make_tables.go
 -rw-r--r--	root/root	usr/lib/go/src/math/cbrt.go
 -rw-r--r--	root/root	usr/lib/go/src/math/cbrt_s390x.s
@@ -4474,6 +4485,7 @@ drwxr-xr-x	root/root	usr/lib/go/src/math/cmplx/
 -rw-r--r--	root/root	usr/lib/go/src/math/erf_s390x.s
 -rw-r--r--	root/root	usr/lib/go/src/math/erf_stub.s
 -rw-r--r--	root/root	usr/lib/go/src/math/erfc_s390x.s
+-rw-r--r--	root/root	usr/lib/go/src/math/example_test.go
 -rw-r--r--	root/root	usr/lib/go/src/math/exp.go
 -rw-r--r--	root/root	usr/lib/go/src/math/exp2_386.s
 -rw-r--r--	root/root	usr/lib/go/src/math/exp2_amd64.s
@@ -5364,6 +5376,7 @@ drwxr-xr-x	root/root	usr/lib/go/src/runtime/debug/
 -rw-r--r--	root/root	usr/lib/go/src/runtime/export_linux_test.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/export_mmap_test.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/export_test.go
+-rw-r--r--	root/root	usr/lib/go/src/runtime/export_unix_test.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/export_windows_test.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/extern.go
 -rw-r--r--	root/root	usr/lib/go/src/runtime/fastlog2.go
@@ -7698,6 +7711,14 @@ drwxr-xr-x	root/root	usr/lib/go/test/fixedbugs/issue20682.dir/
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue20682.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue20749.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue20789.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue20811.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue20813.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue21048.go
+drwxr-xr-x	root/root	usr/lib/go/test/fixedbugs/issue21120.dir/
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue21120.dir/a.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue21120.dir/b.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue21120.dir/main.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue21120.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue2615.go
 drwxr-xr-x	root/root	usr/lib/go/test/fixedbugs/issue3552.dir/
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue3552.dir/one.go
