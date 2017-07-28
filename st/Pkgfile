@@ -24,6 +24,7 @@ build() {
 	download_git https://github.com/onodera-punpun/st master
 	cd $name
 
+	export CC=gcc
 	make
 	make DESTDIR=$PKG PREFIX=/usr TERMINFO=$PKG/usr/share/terminfo install
 }
