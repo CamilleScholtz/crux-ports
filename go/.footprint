@@ -78,6 +78,7 @@ drwxr-xr-x	root/root	usr/lib/go/doc/devel/
 -rw-r--r--	root/root	usr/lib/go/doc/docs.html
 -rw-r--r--	root/root	usr/lib/go/doc/editors.html
 drwxr-xr-x	root/root	usr/lib/go/doc/editors/
+-rw-r--r--	root/root	usr/lib/go/doc/editors/go-plus.png
 -rw-r--r--	root/root	usr/lib/go/doc/editors/gogland.png
 -rw-r--r--	root/root	usr/lib/go/doc/editors/vimgo.png
 -rw-r--r--	root/root	usr/lib/go/doc/editors/vscodego.png
@@ -2307,6 +2308,10 @@ drwxr-xr-x	root/root	usr/lib/go/src/cmd/go/testdata/src/testdep/p2/
 -rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/src/testdep/p2/p2.go
 drwxr-xr-x	root/root	usr/lib/go/src/cmd/go/testdata/src/testdep/p3/
 -rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/src/testdep/p3/p3.go
+drwxr-xr-x	root/root	usr/lib/go/src/cmd/go/testdata/src/testlist/
+-rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/src/testlist/bench_test.go
+-rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/src/testlist/example_test.go
+-rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/src/testlist/test_test.go
 drwxr-xr-x	root/root	usr/lib/go/src/cmd/go/testdata/src/testrace/
 -rw-r--r--	root/root	usr/lib/go/src/cmd/go/testdata/src/testrace/race_test.go
 drwxr-xr-x	root/root	usr/lib/go/src/cmd/go/testdata/src/testregexp/
@@ -3003,6 +3008,7 @@ drwxr-xr-x	root/root	usr/lib/go/src/cmd/vet/testdata/buildtag/
 drwxr-xr-x	root/root	usr/lib/go/src/cmd/vet/testdata/cgo/
 -rw-r--r--	root/root	usr/lib/go/src/cmd/vet/testdata/cgo/cgo.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/vet/testdata/cgo/cgo2.go
+-rw-r--r--	root/root	usr/lib/go/src/cmd/vet/testdata/cgo/cgo3.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/vet/testdata/composite.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/vet/testdata/copylock.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/vet/testdata/copylock_func.go
