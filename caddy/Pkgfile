@@ -5,7 +5,7 @@
 
 name=caddy
 version=git
-release=2
+release=3
 source=(
 	plugins.patch
 	punfed.patch
@@ -23,11 +23,9 @@ build() {
 	patch caddymain/run.go < $SRC/plugins.patch
 
 	go get -d -v
+	go get -u -v -fix github.com/caddyserver/buildworker
 
-	# More verbose building
-	sed -i "s/go build/go build -v/" build.bash
-
-	./build.bash
+	go run build.go
 
 	install -Dm755 caddy $PKG/usr/sbin/caddy
 	install -Dm755 $SRC/caddy $PKG/etc/rc.d/caddy
