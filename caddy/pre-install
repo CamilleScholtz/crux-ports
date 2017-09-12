@@ -1,7 +1,0 @@
-#!/bin/sh
-
-name=caddy
-
-if ! id -u $name >/dev/null 2>&1; then
-	/usr/sbin/useradd -r -d /srv/$name -s /bin/false -G www $name
-fi
