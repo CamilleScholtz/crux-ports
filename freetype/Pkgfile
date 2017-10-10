@@ -1,0 +1,31 @@
+# Description: A free and portable TrueType font rendering engine.
+# URL:         https://www.freetype.org
+# Maintainer:  onodera, https://github.com/onodra-punpun/crux-ports/issues
+# Depends on:  libpng
+
+name=freetype
+version=2.8.1
+release=1
+source=(
+	https://download.savannah.gnu.org/releases/$name/$name-$version.tar.bz2
+	default-interpreter.patch
+	subpixel.patch
+	validate.patch
+)
+
+build() {
+	cd freetype-$version
+
+	patch -p0 < $SRC/default-interpreter.patch
+	patch -p0 < $SRC/subpixel.patch
+	patch -p0 < $SRC/validate.patch
+
+	./configure --prefix=/usr \
+		--with-bzip2 \
+		--with-png
+
+	export CFLAGS+=" -DDEFAULT_TT_INTERPRETER_VERSION=TT_INTERPRETER_VERSION_40"
+
+	make
+	make DESTDIR=$PKG install
+}
