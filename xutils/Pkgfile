@@ -1,0 +1,25 @@
+# Description: X utilities written in Go.
+# URL:         https://github.com/onodera-punpun/xutils
+# Maintainer:  onodera, https://github.com/onodra-punpun/crux-ports/issues
+# Depends on:  go
+# Optional:    slop
+
+name=xutils
+version=git
+release=1
+source=()
+
+build () {
+	export GOPATH=$(pwd)
+	go get -d -u -v -fix github.com/onodera-punpun/$name/xdesktop
+	go get -d -v -fix github.com/onodera-punpun/$name/xscrot
+	go get -d -v -fix github.com/onodera-punpun/$name/xwindow
+	cd src/github.com/onodera-punpun/$name
+
+	for d in $(echo */); do
+		cd $d
+		go build -v
+		install -Dm755 $(echo $d | head -c -2) $PKG/usr/bin/$(echo $d | head -c -2)
+		cd ..
+	done
+}

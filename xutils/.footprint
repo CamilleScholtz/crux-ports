@@ -1,0 +1,6 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/xcomf
+-rwxr-xr-x	root/root	usr/bin/xdesktop
+-rwxr-xr-x	root/root	usr/bin/xscrot
+-rwxr-xr-x	root/root	usr/bin/xwindow
