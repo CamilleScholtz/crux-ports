@@ -16,7 +16,7 @@ build () {
 
 	go build -v
 
-	install -Dm755 prt $PKG/usr/bin/prt
+	install -Dm755 $name $PKG/usr/bin/$name
 	install -Dm755 runtime/pkgmk/pkgmk $PKG/usr/share/prt/pkgmk
 	install -Dm644 runtime/config/config.toml $PKG/etc/prt/config.toml
 
