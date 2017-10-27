@@ -1,0 +1,19 @@
+# Description: A very simple, hackable libnotify notification daemon for X written in Go.
+# URL:         https://github.com/onodera-punpun/melonnotifier
+# Maintainer:  onodera, https://github.com/onodra-punpun/crux-ports/issues
+# Depends on:  go
+
+name=melonnotifier
+version=git
+release=1
+source=()
+
+build () {
+	export GOPATH=$(pwd)
+	go get -d -u -v -fix github.com/onodera-punpun/$name
+	cd src/github.com/onodera-punpun/$name
+
+	go build -v
+
+	install -Dm755 $name $PKG/usr/bin/$name
+}
