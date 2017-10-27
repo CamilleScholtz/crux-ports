@@ -1,4 +1,4 @@
-# Description: Upload files/scrots/URLs to punpun.xyz or sr.ht.
+# Description: Upload files/scrots/URLs to punpun.moe.
 # URL:         https://github.com/onodera-punpun/punf
 # Maintainer:  onodera, https://github.com/onodra-punpun/crux-ports/issues
 # Depends on:  go xsel
@@ -16,7 +16,7 @@ build () {
 
 	go build -v
 
-	install -Dm755 punf $PKG/usr/bin/punf
+	install -Dm755 $name $PKG/usr/bin/$name
 
 	# Install shell files
 	if [[ -e '/usr/bin/fish' ]]; then
