@@ -5,16 +5,20 @@
 # Optional:    alsa-lib fdk-aac gnutls lame libass libsdl2 libtheora libva libvdpau libvorbis libvpx libwebp opus x264 x265
 
 name=ffmpeg
-version=3.4.1
+version=3.4.2
 release=1
 source=(
 	https://ffmpeg.org/releases/$name-$version.tar.bz2
 	libressl.patch
+	CVE-2018-6621.patch
 	ffmpeg-x264-10bit.sh
 )
 
 build() {
 	cd $name-$version
+
+	# https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-6621
+	patch -p1 -i $SRC/CVE-2018-6621.patch
 
 	patch -p1 < $SRC/libressl.patch
 
