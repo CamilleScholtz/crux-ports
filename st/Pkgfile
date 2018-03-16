@@ -5,7 +5,7 @@
 
 name=st
 version=git
-release=1
+release=2
 source=()
 
 download_git() {
@@ -24,7 +24,6 @@ build() {
 	download_git https://github.com/onodera-punpun/st master
 	cd $name
 
-	export CC=gcc
 	make
-	make DESTDIR=$PKG PREFIX=/usr TERMINFO=$PKG/usr/share/terminfo install
+	make DESTDIR=$PKG PREFIX=/usr install
 }

@@ -5,9 +5,3 @@ drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/man/
 drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/st.1.gz
-drwxr-xr-x	root/root	usr/share/terminfo/
-drwxr-xr-x	root/root	usr/share/terminfo/s/
--rw-r--r--	root/root	usr/share/terminfo/s/st
--rw-r--r--	root/root	usr/share/terminfo/s/st-256color
--rw-r--r--	root/root	usr/share/terminfo/s/st-meta
--rw-r--r--	root/root	usr/share/terminfo/s/st-meta-256color
