@@ -500,6 +500,9 @@ drwxr-xr-x	root/root	usr/lib/go/misc/cgo/testplugin/src/issue22175/
 drwxr-xr-x	root/root	usr/lib/go/misc/cgo/testplugin/src/issue22295.pkg/
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/testplugin/src/issue22295.pkg/main.go
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/testplugin/src/issue22295.pkg/plugin.go
+drwxr-xr-x	root/root	usr/lib/go/misc/cgo/testplugin/src/issue24351/
+-rw-r--r--	root/root	usr/lib/go/misc/cgo/testplugin/src/issue24351/main.go
+-rw-r--r--	root/root	usr/lib/go/misc/cgo/testplugin/src/issue24351/plugin.go
 drwxr-xr-x	root/root	usr/lib/go/misc/cgo/testplugin/src/plugin1/
 -rw-r--r--	root/root	usr/lib/go/misc/cgo/testplugin/src/plugin1/plugin1.go
 drwxr-xr-x	root/root	usr/lib/go/misc/cgo/testplugin/src/plugin2/
@@ -1057,6 +1060,7 @@ drwxr-xr-x	root/root	usr/lib/go/pkg/bootstrap/src/bootstrap/cmd/internal/objabi/
 -rw-r--r--	root/root	usr/lib/go/pkg/bootstrap/src/bootstrap/cmd/internal/objabi/doc.go
 -rw-r--r--	root/root	usr/lib/go/pkg/bootstrap/src/bootstrap/cmd/internal/objabi/flag.go
 -rw-r--r--	root/root	usr/lib/go/pkg/bootstrap/src/bootstrap/cmd/internal/objabi/funcdata.go
+-rw-r--r--	root/root	usr/lib/go/pkg/bootstrap/src/bootstrap/cmd/internal/objabi/funcid.go
 -rw-r--r--	root/root	usr/lib/go/pkg/bootstrap/src/bootstrap/cmd/internal/objabi/head.go
 -rw-r--r--	root/root	usr/lib/go/pkg/bootstrap/src/bootstrap/cmd/internal/objabi/line.go
 -rw-r--r--	root/root	usr/lib/go/pkg/bootstrap/src/bootstrap/cmd/internal/objabi/path.go
@@ -2882,6 +2886,7 @@ drwxr-xr-x	root/root	usr/lib/go/src/cmd/internal/objabi/
 -rw-r--r--	root/root	usr/lib/go/src/cmd/internal/objabi/doc.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/internal/objabi/flag.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/internal/objabi/funcdata.go
+-rw-r--r--	root/root	usr/lib/go/src/cmd/internal/objabi/funcid.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/internal/objabi/head.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/internal/objabi/line.go
 -rw-r--r--	root/root	usr/lib/go/src/cmd/internal/objabi/path.go
@@ -4284,6 +4289,10 @@ drwxr-xr-x	root/root	usr/lib/go/src/go/internal/srcimporter/
 drwxr-xr-x	root/root	usr/lib/go/src/go/internal/srcimporter/testdata/
 drwxr-xr-x	root/root	usr/lib/go/src/go/internal/srcimporter/testdata/issue20855/
 -rw-r--r--	root/root	usr/lib/go/src/go/internal/srcimporter/testdata/issue20855/issue20855.go
+drwxr-xr-x	root/root	usr/lib/go/src/go/internal/srcimporter/testdata/issue23092/
+-rw-r--r--	root/root	usr/lib/go/src/go/internal/srcimporter/testdata/issue23092/issue23092.go
+drwxr-xr-x	root/root	usr/lib/go/src/go/internal/srcimporter/testdata/issue24392/
+-rw-r--r--	root/root	usr/lib/go/src/go/internal/srcimporter/testdata/issue24392/issue24392.go
 drwxr-xr-x	root/root	usr/lib/go/src/go/parser/
 -rw-r--r--	root/root	usr/lib/go/src/go/parser/error_test.go
 -rw-r--r--	root/root	usr/lib/go/src/go/parser/example_test.go
@@ -5234,6 +5243,7 @@ drwxr-xr-x	root/root	usr/lib/go/src/net/http/internal/
 -rw-r--r--	root/root	usr/lib/go/src/net/http/npn_test.go
 drwxr-xr-x	root/root	usr/lib/go/src/net/http/pprof/
 -rw-r--r--	root/root	usr/lib/go/src/net/http/pprof/pprof.go
+-rw-r--r--	root/root	usr/lib/go/src/net/http/pprof/pprof_test.go
 -rw-r--r--	root/root	usr/lib/go/src/net/http/proxy_test.go
 -rw-r--r--	root/root	usr/lib/go/src/net/http/race.go
 -rw-r--r--	root/root	usr/lib/go/src/net/http/range_test.go
@@ -8311,6 +8321,7 @@ drwxr-xr-x	root/root	usr/lib/go/test/fixedbugs/issue23179.dir/
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue23545.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue23719.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue23812.go
+-rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue24449.go
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue2615.go
 drwxr-xr-x	root/root	usr/lib/go/test/fixedbugs/issue3552.dir/
 -rw-r--r--	root/root	usr/lib/go/test/fixedbugs/issue3552.dir/one.go
