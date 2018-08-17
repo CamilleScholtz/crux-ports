@@ -9,11 +9,12 @@ version=git
 release=1
 source=()
 
-build () {
+build() {
 	export GOPATH=$(pwd)
+	go get -d -u -v -fix github.com/onodera-punpun/$name/xcomf
 	go get -d -u -v -fix github.com/onodera-punpun/$name/xdesktop
-	go get -d -v -fix github.com/onodera-punpun/$name/xscrot
-	go get -d -v -fix github.com/onodera-punpun/$name/xwindow
+	go get -d -u -v -fix github.com/onodera-punpun/$name/xscrot
+	go get -d -u -v -fix github.com/onodera-punpun/$name/xwindow
 	cd src/github.com/onodera-punpun/$name
 
 	for d in $(echo */); do
