@@ -1,0 +1,20 @@
+# Description: Compresses PNG files to a smaller size, without losing any information.
+# URL:         http://optipng.sourceforge.net/
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:
+
+name=optipng
+version=0.7.7
+release=1
+source=(https://prdownloads.sourceforge.net/$name/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--mandir=/usr/share/man
+
+	make
+	make DESTDIR=$PKG install
+}

@@ -1,6 +1,6 @@
 # Description: X utilities written in Go.
 # URL:         https://github.com/onodera-punpun/xutils
-# Maintainer:  onodera, https://github.com/onodra-punpun/crux-ports/issues
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
 # Depends on:  go
 # Optional:    slop
 

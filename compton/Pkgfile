@@ -1,0 +1,29 @@
+# Description: A compositor for X.
+# URL:         https://github.com/chjj/compton
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  git libpcre mesa3d xorg-libxcomposite xorg-libxinerama xorg-libxrandr xorg-libxdamage
+
+name=compton
+version=git
+release=3
+source=()
+
+download_git() {
+	if [[ -d $PKGMK_SOURCE_DIR/$name ]]; then
+		git -C $PKGMK_SOURCE_DIR/$name fetch --depth=1
+		git -C $PKGMK_SOURCE_DIR/$name clean -f
+		git -C $PKGMK_SOURCE_DIR/$name reset --hard origin/$2
+	else
+		git -C $PKGMK_SOURCE_DIR clone --depth=1 $1 -b $2 $name
+	fi
+
+	cp -r $PKGMK_SOURCE_DIR/$name $PKGMK_WORK_DIR/src/$name
+}
+
+build() {
+	download_git https://github.com/yshui/$name master
+	cd $name
+
+	make NO_DBUS=1 NO_LIBCONFIG=1 compton
+	install -Dm755 compton $PKG/usr/bin/compton
+}

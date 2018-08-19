@@ -1,0 +1,23 @@
+# Description: A modern and intuitive terminal-based text editor.
+# URL:         https://github.com/zyedidia/micro
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  go
+# Optional:    xclip xsel python3-pyflakes goreturns golangci-lint misspell
+
+name=micro
+version=git
+release=2
+source=()
+
+build() {
+	export GOPATH=$(pwd)
+	go get -d -v -fix github.com/zyedidia/$name/cmd/$name
+	cd src/github.com/zyedidia/$name
+
+	# More verbose building
+	sed -i "s/go get/go get -v/" Makefile
+	sed -i "s/go build/go build -v/" Makefile
+
+	make install
+	install -Dm755 $SRC/bin/micro $PKG/usr/bin/micro
+}

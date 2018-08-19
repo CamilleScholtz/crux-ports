@@ -1,0 +1,29 @@
+# Description: C++ mathematics library for 3D software based on the OpenGL Shading Language (GLSL) specification.
+# URL:         https://glm.g-truc.net
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  cmake
+
+name=glm
+version=0.9.9.0
+release=1
+source=(https://github.com/g-truc/$name/archive/$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	cmake . \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_CXX_COMPILER_ID=GNU \
+		-DCMAKE_CXX_FLAGS=" -std=c++11"
+
+	make
+	make DESTDIR=$PKG install
+
+	mkdir -p $PKG/usr/share/doc
+	cp -r doc $PKG/usr/share/doc/$name
+
+	rm -rf $PKG/usr/lib64/cmake/$name/${name}Config.cmake
+
+	find $PKG -type f -exec chmod 644 {} \;
+	find $PKG -type d -exec chmod 755 {} \;
+}

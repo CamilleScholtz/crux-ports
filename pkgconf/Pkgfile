@@ -1,0 +1,24 @@
+# Description: A system for managing library compile/link flags.
+# URL:         https://github.com/pkgconf/pkgconf
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:
+
+name=pkgconf
+version=1.5.3
+release=1
+source=(https://github.com/$name/$name/archive/$name-$version.tar.gz)
+
+build() {
+	cd $name-$name-$version
+
+	./autogen.sh
+	./configure --prefix=/usr \
+		--with-system-libdir=/lib:/usr/lib
+
+	make
+	make install DESTDIR=$PKG
+
+	ln -sf /usr/bin/pkgconf $PKG/usr/bin/pkg-config
+
+	rm -rf $PKG/usr/share/doc
+}

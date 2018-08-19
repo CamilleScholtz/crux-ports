@@ -1,6 +1,6 @@
 # Description: The Go Programming Language.
 # URL:         https://golang.org/
-# Maintainer:  onodera, https://github.com/onodra-punpun/crux-ports/issues
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
 # Depends on:
 
 name=go

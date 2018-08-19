@@ -1,0 +1,16 @@
+# Description: Correct commonly misspelled English words... quickly.
+# URL:         https://github.com/client9/misspell
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  go
+
+name=misspell
+version=git
+release=1
+source=()
+
+build() {
+	export GOPATH=$(pwd)
+	go get -u -v -fix github.com/client9/$name/cmd/$name
+
+	install -Dm755 bin/misspell $PKG/usr/bin/misspell
+}

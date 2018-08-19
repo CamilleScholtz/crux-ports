@@ -1,0 +1,16 @@
+# Description: A dirty hack for displaying shaped windows in X11.
+# URL:         https://github.com/sdhand/n30f
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  cairo
+
+name=n30f
+version=2.0
+release=1
+source=(https://github.com/sdhand/$name/archive/$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	make
+	make DESTDIR=$PKG install
+}

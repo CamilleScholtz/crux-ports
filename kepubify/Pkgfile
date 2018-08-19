@@ -1,0 +1,16 @@
+# Description: An epub to kepub conversion tool.
+# URL:         https://geek1011.github.io/kepubify/
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  go
+
+name=kepubify
+version=git
+release=1
+source=()
+
+build() {
+	export GOPATH=$(pwd)
+	go get -u -v -fix github.com/geek1011/kepubify
+
+	install -Dm755 bin/kepubify $PKG/usr/bin/kepubify
+}

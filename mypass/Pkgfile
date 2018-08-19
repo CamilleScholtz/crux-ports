@@ -1,0 +1,32 @@
+# Description: Deterministic password generator.
+# URL:         https://github.com/anoma-/mypass
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:
+
+name=mypass
+version=git
+release=1
+source=()
+
+download_git() {
+	if [[ -d $PKGMK_SOURCE_DIR/$name ]]; then
+		git -C $PKGMK_SOURCE_DIR/$name fetch --depth=1
+		git -C $PKGMK_SOURCE_DIR/$name clean -f
+		git -C $PKGMK_SOURCE_DIR/$name reset --hard origin/$2
+	else
+		git -C $PKGMK_SOURCE_DIR clone --depth=1 $1 -b $2 $name
+	fi
+
+	cp -r $PKGMK_SOURCE_DIR/$name $PKGMK_WORK_DIR/src/$name
+}
+
+build() {
+	download_git https://github.com/anoma-/$name master
+	cd $name
+
+	sed -i 's/FLAGS=/CFLAGS+=/g' Makefile
+	sed -i 's/(FLAGS)/(CFLAGS)/g' Makefile
+
+	make
+	install -Dm755 mypass $PKG/usr/bin/mypass
+}

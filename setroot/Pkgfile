@@ -1,0 +1,16 @@
+# Description: A simple X background setter inspired by imlibsetroot and feh.
+# URL:         https://github.com/ttzhou/setroot
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  imlib2 xorg-server
+
+name=setroot
+version=2.0.1
+release=1
+source=(https://github.com/ttzhou/$name/archive/v$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	make PREFIX=/usr
+	make PREFIX=/usr DESTDIR=$PKG install
+}

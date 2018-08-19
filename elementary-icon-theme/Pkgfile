@@ -1,0 +1,19 @@
+# Description: An icon theme designed to be smooth, sexy, clear, and efficient.
+# URL:         https://launchpad.net/elementaryicons
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  librsvg
+
+name=elementary-icon-theme
+version=4.3.1
+release=1
+source=(https://launchpad.net/${name:0:10}icons/${version%%.*}.x/$version/+download/$name-$version.tar.xz)
+
+build() {
+	install -dm755 $PKG/usr/share/icons
+	cp -dr --no-preserve=ownership $name-$version $PKG/usr/share/icons/${name:0:10}
+
+	rm -r $PKG/usr/share/icons/${name:0:10}/{.gitignore,CMakeLists.txt,cmake,cursors/CMakeLists.txt,volumeicon,AUTHORS,CODE_OF_CONDUCT.md,CONTRIBUTING.md,CONTRIBUTORS,COPYING,README.md}
+
+	find $PKG -type d -exec chmod 755 {} +
+	find $PKG -type f -exec chmod 644 {} +
+}

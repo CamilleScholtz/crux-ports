@@ -1,0 +1,28 @@
+# Description: A smart and user-friendly command line shell for OSX, Linux, and the rest of the family.
+# URL:         https://fishshell.com
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  doxygen libpcre2
+# Optional:    xsel
+
+name=fish
+version=2.7.1
+release=1
+source=(https://github.com/$name-shell/$name-shell/archive/$version.tar.gz)
+
+build() {
+	cd $name-shell-$version
+
+	autoreconf --no-recursive
+	./configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--without-included-pcre2
+
+	make
+	make DESTDIR=$PKG install
+
+	install -d $PKG/bin
+	ln -s /usr/bin/$name $PKG/bin
+
+	rm -rf $PKG/usr/share/{locale,doc}
+}

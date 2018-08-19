@@ -1,0 +1,19 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+lrwxrwxrwx	root/root	usr/bin/acat -> atool
+lrwxrwxrwx	root/root	usr/bin/adiff -> atool
+lrwxrwxrwx	root/root	usr/bin/als -> atool
+lrwxrwxrwx	root/root	usr/bin/apack -> atool
+lrwxrwxrwx	root/root	usr/bin/arepack -> atool
+-rwxr-xr-x	root/root	usr/bin/atool
+lrwxrwxrwx	root/root	usr/bin/aunpack -> atool
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+lrwxrwxrwx	root/root	usr/share/man/man1/acat.1.gz -> atool.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/adiff.1.gz -> atool.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/als.1.gz -> atool.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/apack.1.gz -> atool.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/arepack.1.gz -> atool.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/atool.1.gz
+lrwxrwxrwx	root/root	usr/share/man/man1/aunpack.1.gz -> atool.1.gz

@@ -1,0 +1,21 @@
+# Description: An almost exact clone of ncmpc with some new features.
+# URL:         http://rybczak.net/ncmpcpp
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  libmpdclient boost taglib
+
+name=ncmpcpp
+version=0.8.2
+release=1
+source=(http://rybczak.net/$name/stable/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	./autogen.sh
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -rf $PKG/usr/share/doc
+}

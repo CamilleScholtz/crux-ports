@@ -1,0 +1,16 @@
+# Description: A color emoji SVGinOT font using Emoji One graphics with diversity and country flags.
+# URL:         https://github.com/eosrei/emojione-color-font
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  fontconfig
+
+name=ttf-emojione-color
+version=1.4
+release=1
+source=(https://github.com/eosrei/emojione-color-font/releases/download/v$version/EmojiOneColor-SVGinOT-Linux-$version.tar.gz)
+
+build() {
+	cd EmojiOneColor-SVGinOT-Linux-$version
+
+	install -Dm644 EmojiOneColor-SVGinOT.ttf $PKG/usr/share/fonts/X11/TTF/EmojiOne/Color.ttf
+	install -Dm644 fontconfig/56-emojione-color.conf $PKG/etc/fonts/conf.avail/56-emojione-color.conf
+}

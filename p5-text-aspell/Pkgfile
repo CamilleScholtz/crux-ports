@@ -1,0 +1,26 @@
+# Description: Perl interface to the GNU Aspell library.
+# URL:         http://search.cpan.org/~hank/Text-Aspell/
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  aspell
+
+name=p5-text-aspell
+version=0.09
+release=1
+source=(http://search.cpan.org/CPAN/authors/id/H/HA/HANK/Text-Aspell-$version.tar.gz)
+
+build() {
+	cd Text-Aspell-$version
+
+	perl Makefile.PL
+
+	make
+	make DESTDIR=$PKG install
+
+	find $PKG \
+		-name .packlist -or \
+		-name '*.bs' -or \
+		-name autosplit.ix -or \
+		-name perllocal.pod | xargs rm
+
+	find $PKG -depth -empty -exec rm -r {} \;
+}

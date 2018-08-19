@@ -1,0 +1,16 @@
+# Description: A tool that formats shell programs.
+# URL:         https://github.com/mvdan/sh
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  go
+
+name=shfmt
+version=git
+release=1
+source=()
+
+build() {
+	export GOPATH=$(pwd)
+
+	go get -u -v -fix mvdan.cc/sh/cmd/shfmt
+	install -Dm755 bin/shfmt $PKG/usr/bin/shfmt
+}

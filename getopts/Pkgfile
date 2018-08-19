@@ -1,0 +1,15 @@
+# Description: Getopts(1) for fish.
+# URL:         https://github.com/fisherman/getopts
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  fish
+
+name=getopts
+version=1.1.0
+release=1
+source=(https://github.com/fisherman/$name/archive/$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	install -Dm644 ${name}.fish $PKG/usr/share/fish/functions/${name}.fish
+}
