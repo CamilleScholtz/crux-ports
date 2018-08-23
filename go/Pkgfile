@@ -4,7 +4,7 @@
 # Depends on:
 
 name=go
-version=1.11rc1
+version=1.11rc2
 release=1
 source=(
 	https://dl.google.com/$name/$name$version.src.tar.gz
