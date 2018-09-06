@@ -33,7 +33,6 @@ drwxr-xr-x	root/root	usr/lib/firefox/defaults/
 drwxr-xr-x	root/root	usr/lib/firefox/defaults/pref/
 -rw-r--r--	root/root	usr/lib/firefox/defaults/pref/channel-prefs.js
 -rw-r--r--	root/root	usr/lib/firefox/dependentlibs.list
-lrwxrwxrwx	root/root	usr/lib/firefox/dictionaries -> /usr/share/hunspell
 -rwxr-xr-x	root/root	usr/lib/firefox/firefox
 -rwxr-xr-x	root/root	usr/lib/firefox/firefox-bin
 drwxr-xr-x	root/root	usr/lib/firefox/fonts/
@@ -44,7 +43,6 @@ drwxr-xr-x	root/root	usr/lib/firefox/gmp-clearkey/0.1/
 -rw-r--r--	root/root	usr/lib/firefox/gmp-clearkey/0.1/manifest.json
 drwxr-xr-x	root/root	usr/lib/firefox/gtk2/
 -rwxr-xr-x	root/root	usr/lib/firefox/gtk2/libmozgtk.so
-lrwxrwxrwx	root/root	usr/lib/firefox/hyphenation -> /usr/share/hyphen
 -rwxr-xr-x	root/root	usr/lib/firefox/liblgpllibs.so
 -rwxr-xr-x	root/root	usr/lib/firefox/libmozavcodec.so
 -rwxr-xr-x	root/root	usr/lib/firefox/libmozavutil.so
