@@ -4,7 +4,7 @@
 # Depends on:  libzmq cmake
 
 name=cppzmq
-version=4.2.3
+version=4.3.0
 release=1
 source=(https://github.com/zeromq/$name/archive/v$version.tar.gz)
 
