@@ -1,5 +1,5 @@
 # Description: Perl interface to the GNU Aspell library.
-# URL:         http://search.cpan.org/~hank/Text-Aspell/
+# URL:         https://search.cpan.org/~hank/Text-Aspell/
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
 # Depends on:  aspell
 
