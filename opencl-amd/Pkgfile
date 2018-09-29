@@ -4,7 +4,7 @@
 # Depends on:  libdrm ocl-icd
 
 name=opencl-amd
-version=18.30-633530
+version=18.30-641594
 release=1
 source=(https://www2.ati.com/drivers/linux/ubuntu/amdgpu-pro-$version.tar.xz)
 
