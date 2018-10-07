@@ -1,0 +1,18 @@
+# Description: Collection of tools for Opus audio codec.
+# URL:         https://wiki.xiph.org/Opus-tools
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  flac opusfile libopusenc
+
+name=opus-tools
+version=0.2
+release=1
+source=(https://downloads.xiph.org/releases/opus/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}

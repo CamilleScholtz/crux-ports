@@ -1,0 +1,18 @@
+# Description: Library for opening, seeking, and decoding .opus files.
+# URL:         https://opus-codec.org/
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  libogg opus
+
+name=opusfile
+version=0.11
+release=1
+source=(https://downloads.xiph.org/releases/opus/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}
