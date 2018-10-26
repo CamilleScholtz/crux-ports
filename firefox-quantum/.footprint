@@ -19,7 +19,6 @@ drwxr-xr-x	root/root	usr/lib/firefox/browser/chrome/icons/default/
 -rw-r--r--	root/root	usr/lib/firefox/browser/chrome/icons/default/default48.png
 -rw-r--r--	root/root	usr/lib/firefox/browser/chrome/icons/default/default64.png
 drwxr-xr-x	root/root	usr/lib/firefox/browser/features/
--rw-r--r--	root/root	usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi
 -rw-r--r--	root/root	usr/lib/firefox/browser/features/aushelper@mozilla.org.xpi
 -rw-r--r--	root/root	usr/lib/firefox/browser/features/firefox@getpocket.com.xpi
 -rw-r--r--	root/root	usr/lib/firefox/browser/features/formautofill@mozilla.org.xpi
