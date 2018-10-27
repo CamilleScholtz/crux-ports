@@ -4,12 +4,12 @@
 # Depends on:  boost cppzmq libunbound
 
 name=monero
-version=0.12.3.0
-release=3
+version=0.13.0.4
+release=0
 source=(
 	https://github.com/$name-project/$name/archive/v$version.tar.gz
-	https://github.com/$name-project/miniupnp/archive/6a63f99.zip
-	https://github.com/Tencent/rapidjson/archive/af223d4.zip
+	https://github.com/$name-project/miniupnp/archive/6b9b73a.zip
+	https://github.com/Tencent/rapidjson/archive/129d19b.zip
 	monerod.conf
 	monerod
 )
@@ -17,8 +17,8 @@ source=(
 build() {
 	cd $name-$version
 
-	mv $SRC/miniupnp-6a63f99*/* external/miniupnp
-	mv $SRC/rapidjson-af223d4*/* external/rapidjson
+	mv $SRC/miniupnp-6b9b73a*/* external/miniupnp
+	mv $SRC/rapidjson-129d19b*/* external/rapidjson
 
 	cmake . \
 		-DCMAKE_BUILD_TYPE=Release \
