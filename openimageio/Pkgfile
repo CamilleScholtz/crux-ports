@@ -1,11 +1,11 @@
 # Description: A library for reading and writing images, including classes, utilities, and applications.
 # URL:         http://openimageio.org/
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
-# Depends on:  cmake openjpeg giflib openexr boost
-# Optional:    qt4 qt5 glew ffmpeg py3boost
+# Depends on:  cmake openjpeg giflib openexr py3boost
+# Optional:    qt4 qt5 glew ffmpeg
 
 name=openimageio
-version=1.8.14
+version=1.8.17
 release=1
 source=(https://github.com/OpenImageIO/oiio/archive/Release-$version.tar.gz)
 
@@ -17,7 +17,8 @@ build() {
 		-DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_INSTALL_PREFIX=/usr \
 		-DCMAKE_INSTALL_LIBDIR=/usr/lib/ \
-		-DUSE_PYTHON=ON \
+		-DUSE_PYTHON=OFF \
+		-DUSE_PYTHON3=ON \
 		-DPYLIB_LIB_PREFIX=/usr/lib \
 		-DUSE_OPENSSL=ON
 
