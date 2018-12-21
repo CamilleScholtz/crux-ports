@@ -5,18 +5,16 @@
 # Optional:    xsel
 
 name=fish
-version=2.7.1
+version=3.0b1
 release=1
-source=(https://github.com/$name-shell/$name-shell/archive/$version.tar.gz)
+source=(https://github.com/$name-shell/$name-shell/releases/download/$version/$name-$version.tar.gz)
 
 build() {
-	cd $name-shell-$version
+	cd $name-$version
 
-	autoreconf --no-recursive
-	./configure \
-		--prefix=/usr \
-		--sysconfdir=/etc \
-		--without-included-pcre2
+	cmake . \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_BUILD_TYPE=Release
 
 	make
 	make DESTDIR=$PKG install
