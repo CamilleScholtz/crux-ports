@@ -1,0 +1,29 @@
+# Description: Convert X font from Portable Compiled Format to Bitmap Distribution Format
+# URL:         https://github.com/ganaware/pcf2bdf
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  git
+
+name=pcf2bdf
+version=git
+release=1
+source=()
+
+download_git() {
+	if [[ -d $PKGMK_SOURCE_DIR/$name ]]; then
+		git -C $PKGMK_SOURCE_DIR/$name fetch --depth=1
+		git -C $PKGMK_SOURCE_DIR/$name clean -f
+		git -C $PKGMK_SOURCE_DIR/$name reset --hard origin/$2
+	else
+		git -C $PKGMK_SOURCE_DIR clone --depth=1 $1 -b $2 $name
+	fi
+
+	cp -r $PKGMK_SOURCE_DIR/$name $PKGMK_WORK_DIR/src/$name
+}
+
+build() {
+	download_git https://github.com/ganaware/$name master
+	cd $name
+
+	make -f Makefile.gcc
+	make -f Makefile.gcc DESTDIR=$PKG PREFIX=/usr install
+}
