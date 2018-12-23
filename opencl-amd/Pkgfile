@@ -4,24 +4,24 @@
 # Depends on:  libdrm ocl-icd
 
 name=opencl-amd
-version=18.30-641594
+version=18.50-708488
 release=1
-source=(https://www2.ati.com/drivers/linux/ubuntu/amdgpu-pro-$version.tar.xz)
+source=(https://drivers.amd.com/drivers/linux/amdgpu-pro-$version-ubuntu-18.04.tar.xz)
 
 build() {
 	mkdir opencl
 	cd opencl
 
-	ar x $SRC/amdgpu-pro-$version/opencl-amdgpu-pro-icd_${version}_amd64.deb
+	ar x $SRC/amdgpu-pro-$version-ubuntu-18.04/opencl-amdgpu-pro-icd_${version}_amd64.deb
 	tar xJf data.tar.xz
-	ar x $SRC/amdgpu-pro-$version/opencl-orca-amdgpu-pro-icd_${version}_amd64.deb
+	ar x $SRC/amdgpu-pro-$version-ubuntu-18.04/opencl-orca-amdgpu-pro-icd_${version}_amd64.deb
 	tar xJf data.tar.xz
 	cd opt/amdgpu-pro/lib/x86_64-linux-gnu
 	sed -i "s|libdrm_amdgpu|libdrm_amdgpo|g" libamdocl-orca64.so
 
 	mkdir $SRC/libdrm
 	cd $SRC/libdrm
-	ar x $SRC/amdgpu-pro-$version/libdrm-amdgpu-amdgpu1_2.4.92-${version##*-}_amd64.deb
+	ar x $SRC/amdgpu-pro-$version-ubuntu-18.04/libdrm-amdgpu-amdgpu1_2.4.95-${version##*-}_amd64.deb
 	tar xJf data.tar.xz
 	cd opt/amdgpu/lib/x86_64-linux-gnu
 	rm libdrm_amdgpu.so.1
