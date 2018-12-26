@@ -1,0 +1,25 @@
+# Description: A small program that produces a snow effect on your desktop.
+# URL:         https://janswaal.home.xs4all.nl/Xsnow/
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  xorg-imake xorg-gccmakedep
+
+name=xsnow
+version=1.42
+release=1
+source=(
+	https://janswaal.home.xs4all.nl/Xsnow/$name-$version.tar.gz
+	https://raw.githubusercontent.com/ProtractorNinja/$name-comp-patch/master/$name-comp.patch
+)
+
+build() {
+	cd $name-$version
+
+	patch -p1 <$SRC/xsnow-comp.patch
+
+	xmkmf
+	make
+	make depend
+
+	install -Dm755 xsnow $PKG/usr/bin/xsnow
+	install -Dm644 xsnow.1 $PKG/usr/share/man/man1/xsnow.1
+}
