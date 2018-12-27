@@ -1,4 +1,4 @@
-# Description: A concurrent, hackable bar/panel for X written in Go..
+# Description: A concurrent, hackable bar/panel for X written in Go.
 # URL:         https://github.com/onodera-punpun/melonbar
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
 # Depends on:  go
