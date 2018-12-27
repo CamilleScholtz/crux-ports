@@ -1,0 +1,19 @@
+# Description: A simple solution for bundling static assets inside of Go binaries.
+# URL:         https://github.com/gobuffalo/packr/tree/master/v2
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  go
+
+name=packr2
+version=git
+release=1
+source=()
+
+build() {
+	export GOPATH=$(pwd)
+	go get -d -u -v -fix github.com/gobuffalo/packr/v2/$name
+	cd src/github.com/gobuffalo/packr/v2/$name
+
+	go build -v
+
+	install -Dm755 $name $PKG/usr/bin/$name
+}
