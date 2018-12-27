@@ -4,7 +4,7 @@
 # Depends on:
 
 name=go
-version=1.11.4
+version=1.12beta1
 release=1
 source=(
 	https://dl.google.com/$name/$name$version.src.tar.gz
@@ -26,7 +26,6 @@ build() {
 	export GOROOT_FINAL=/usr/lib/go
 	export GOOS=linux
 	export GOARCH=amd64
-	export GOCACHE=off
 
 	patch -p0 -i $SRC/$name-certpath.diff
 
