@@ -1,0 +1,26 @@
+# Description: Real-time adjustable equalizer plugin for ALSA sound server.
+# URL:         https://web.archive.org/web/20161105202833/http://thedigitalmachine.net/alsaequal.html
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  alsa-lib caps
+
+name=alsaequal
+version=0.6
+release=1
+source=(
+	https://launchpad.net/ubuntu/+archive/primary/+files/${name}_$version.orig.tar.bz2
+	makefile.patch
+	false-error.patch
+	caps-9.patch
+)
+
+build() {
+	cd $name
+
+	patch -p0 <$SRC/makefile.patch
+	patch -p0 <$SRC/false-error.patch
+	patch -p0 <$SRC/caps-9.patch
+
+	make
+	install -dm755 $PKG/usr/lib/alsa-lib
+	make DESTDIR=$PKG install
+}
