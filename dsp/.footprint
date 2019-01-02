@@ -1,0 +1,10 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/dsp
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/ladspa/
+-rwxr-xr-x	root/root	usr/lib/ladspa/ladspa_dsp.so
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/dsp.1.gz
