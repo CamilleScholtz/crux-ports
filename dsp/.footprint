@@ -1,6 +1,7 @@
 drwxr-xr-x	root/root	usr/
 drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/dsp
+-rwxr-xr-x	root/root	usr/bin/rew_to_dsp
 drwxr-xr-x	root/root	usr/lib/
 drwxr-xr-x	root/root	usr/lib/ladspa/
 -rwxr-xr-x	root/root	usr/lib/ladspa/ladspa_dsp.so

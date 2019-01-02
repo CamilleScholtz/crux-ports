@@ -6,7 +6,7 @@
 
 name=dsp
 version=1.6
-release=1
+release=2
 source=(https://github.com/bmc0/$name/archive/v$version.tar.gz)
 
 build() {
@@ -16,4 +16,6 @@ build() {
 
 	make
 	make DESTDIR=$PKG install
+
+	install -Dm755 scripts/rew_to_dsp.sh $PKG/usr/bin/rew_to_dsp
 }
