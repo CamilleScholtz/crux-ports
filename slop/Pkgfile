@@ -1,11 +1,11 @@
 # Description: Utility to query the user for a selection and print the region to stdout.
 # URL:         https://github.com/naelstrof/slop
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
-# Depends on:  xorg-libxext glm glew glu icu
+# Depends on:  xorg-libxext
 
 name=slop
 version=7.4
-release=1
+release=2
 source=(https://github.com/naelstrof/$name/archive/v$version.tar.gz)
 
 build() {
@@ -15,7 +15,7 @@ build() {
 		-DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_INSTALL_PREFIX=/usr \
 		-DCMAKE_INSTALL_LIBDIR=/usr/lib \
-		-DSLOP_OPENGL=True
+		-DSLOP_OPENGL=False
 
 	make
 	make DESTDIR=$PKG install
