@@ -4,7 +4,7 @@
 # Depends on:  boost python3
 
 name=py3boost
-version=1.68.0
+version=1.69.0
 release=1
 source=(https://downloads.sourceforge.net/project/${name#py3}/${name#py3}/$version/${name#py3}_${version//./_}.tar.bz2)
 
