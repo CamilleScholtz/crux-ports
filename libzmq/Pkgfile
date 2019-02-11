@@ -1,22 +1,25 @@
 # Description: The ZeroMQ messaging library and tools.
 # URL:         http://zeromq.org/
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
-# Depends on:  libsodium
+# Depends on:  libsodium cmake
 
 name=libzmq
-version=4.2.5
+version=4.3.1
 release=1
-source=(https://github.com/zeromq/$name/archive/v$version.tar.gz)
+source=(https://github.com/zeromq/$name/releases/download/v$version/zeromq-$version.tar.gz)
 
 build() {
-	cd $name-$version
+	cd zeromq-$version
 
-	./autogen.sh
-	./configure \
-		--prefix=/usr \
-		--with-libsodium \
-		--with-poller=epoll
+	mkdir build
+	cd build
+	cmake .. \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DWITH_LIBSODIUM=ON
 
 	make
 	make DESTDIR=$PKG install
+
+	rm -rf $PKG/usr/share
 }

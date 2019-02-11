@@ -1,14 +1,18 @@
 drwxr-xr-x	root/root	usr/
 drwxr-xr-x	root/root	usr/bin/
--rwxr-xr-x	root/root	usr/bin/curve_keygen
+-rwxr-xr-x	root/root	usr/bin/inproc_lat
+-rwxr-xr-x	root/root	usr/bin/inproc_thr
+-rwxr-xr-x	root/root	usr/bin/local_lat
+-rwxr-xr-x	root/root	usr/bin/local_thr
+-rwxr-xr-x	root/root	usr/bin/remote_lat
+-rwxr-xr-x	root/root	usr/bin/remote_thr
 drwxr-xr-x	root/root	usr/include/
 -rw-r--r--	root/root	usr/include/zmq.h
 -rw-r--r--	root/root	usr/include/zmq_utils.h
-drwxr-xr-x	root/root	usr/lib/
--rw-r--r--	root/root	usr/lib/libzmq.a
--rwxr-xr-x	root/root	usr/lib/libzmq.la
-lrwxrwxrwx	root/root	usr/lib/libzmq.so -> libzmq.so.5.1.5
-lrwxrwxrwx	root/root	usr/lib/libzmq.so.5 -> libzmq.so.5.1.5
--rwxr-xr-x	root/root	usr/lib/libzmq.so.5.1.5
-drwxr-xr-x	root/root	usr/lib/pkgconfig/
--rw-r--r--	root/root	usr/lib/pkgconfig/libzmq.pc
+drwxr-xr-x	root/root	usr/lib64/
+-rw-r--r--	root/root	usr/lib64/libzmq.a
+lrwxrwxrwx	root/root	usr/lib64/libzmq.so -> libzmq.so.5
+lrwxrwxrwx	root/root	usr/lib64/libzmq.so.5 -> libzmq.so.5.2.1
+-rwxr-xr-x	root/root	usr/lib64/libzmq.so.5.2.1
+drwxr-xr-x	root/root	usr/lib64/pkgconfig/
+-rw-r--r--	root/root	usr/lib64/pkgconfig/libzmq.pc
