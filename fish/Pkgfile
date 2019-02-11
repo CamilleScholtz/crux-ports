@@ -5,7 +5,7 @@
 # Optional:    xsel
 
 name=fish
-version=3.0.0
+version=3.0.1
 release=1
 source=(https://github.com/$name-shell/$name-shell/releases/download/$version/$name-$version.tar.gz)
 
