@@ -4,7 +4,7 @@
 # Depends on:
 
 name=libsodium
-version=1.0.16
+version=1.0.17
 release=1
 source=(https://github.com/jedisct1/$name/releases/download/$version/$name-$version.tar.gz)
 
