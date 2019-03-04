@@ -1,0 +1,34 @@
+# Description: Evented I/O for V8 JavaScript.
+# URL:         https://nodejs.org/en/
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  python c-ares icu
+
+name=nodejs
+version=11.10.1
+release=1
+source=(https://nodejs.org/dist/v$version/node-v$version.tar.xz)
+
+build() {
+	cd node-v$version
+
+	[ -e '/usr/lib/pkgconfig/icu-i18n.pc' ] && PKGMK_NODEJS+=' --with-intl=system-icu'
+	./configure ${PKGMK_NODEJS} \
+		--prefix=/usr \
+		--shared-cares \
+		--shared-zlib \
+		--experimental-http-parser
+	#--shared-openssl \
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/doc
+
+	find $PKG -type f \( \
+		-name 'README.md' -o \
+		-name 'AUTHORS.md' -o \
+		-name 'INSTALL.md' -o \
+		-name 'TODO.org' -o \
+		-name 'ChangeLog' -o \
+		-name 'NEWS' \) -delete
+}
