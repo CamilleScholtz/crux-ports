@@ -1,0 +1,24 @@
+# Description: Login utility and PAM module for Duo Security two-factor authentication.
+# URL:         https://github.com/duosecurity/duo_unix
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  pam
+
+name=duo
+version=1.11.1
+release=1
+source=(https://github.com/duosecurity/${name}_unix/archive/${name}_unix-$version.tar.gz)
+
+build() {
+	cd ${name}_unix-${name}_unix-$version
+
+	autoreconf -i
+	./configure \
+		--prefix=/usr \
+		--with-pam=/usr/lib/security \
+		--with-privsep-user=nobody
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -rf $PKG/usr/share/doc
+}
