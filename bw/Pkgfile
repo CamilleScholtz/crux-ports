@@ -1,0 +1,29 @@
+# Description: The command line vault.
+# URL:         https://github.com/bitwarden/cli
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  nodejs
+
+name=bw
+version=1.7.0
+release=1
+source=(
+	https://github.com/bitwarden/cli/archive/v$version.tar.gz
+	https://github.com/bitwarden/jslib/archive/af4e01c238b88ac296edfbf300a180e956da7d4b.tar.gz
+	bw.sh
+)
+
+build() {
+	cd cli-$version
+
+	rmdir jslib
+	ln -s $SRC/jslib-af4e01c238b88ac296edfbf300a180e956da7d4b jslib
+
+	npm install
+	npm run build:prod
+
+	install -dm755 $PKG/usr/lib/$name
+	cp -a build/. $PKG/usr/lib/$name/
+
+	install -dm755 $PKG/usr/bin
+	install -Dm755 $SRC/bw.sh $PKG/usr/bin/bw
+}
