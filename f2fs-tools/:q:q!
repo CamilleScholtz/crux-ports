@@ -1,0 +1,25 @@
+# Description: Tools for Flash-Friendly File System.
+# URL:         https://git.kernel.org/pub/scm/linux/kernel/git/jaegeuk/f2fs-tools.git/about/
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:
+
+name=f2fs-tools
+version=1.12.0
+release=1
+source=(
+	https://git.kernel.org/pub/scm/linux/kernel/git/jaegeuk/$name.git/snapshot/$name-$version.tar.gz
+	https://gitweb.gentoo.org/repo/gentoo.git/plain/sys-fs/$name/files/$name-${version}-fsck.patch
+)
+
+build() {
+	cd $name-$version
+
+	patch -p1 < $SRC/$name-${version}-fsck.patch
+
+	autoreconf -fi
+	./configure \
+		--prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}
