@@ -5,7 +5,7 @@
 # Optional:    qt4 qt5 glew ffmpeg
 
 name=openimageio
-version=1.8.17
+version=2.0.7
 release=1
 source=(https://github.com/OpenImageIO/oiio/archive/Release-$version.tar.gz)
 
@@ -17,10 +17,7 @@ build() {
 		-DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_INSTALL_PREFIX=/usr \
 		-DCMAKE_INSTALL_LIBDIR=/usr/lib/ \
-		-DUSE_PYTHON=OFF \
-		-DUSE_PYTHON3=ON \
-		-DPYLIB_LIB_PREFIX=/usr/lib \
-		-DUSE_OPENSSL=ON
+		-DPYLIB_LIB_PREFIX=/usr/lib
 
 	make
 	make DESTDIR=$PKG install
