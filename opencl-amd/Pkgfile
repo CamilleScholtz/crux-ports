@@ -4,7 +4,7 @@
 # Depends on:  libdrm ocl-icd
 
 name=opencl-amd
-version=18.50-708488
+version=19.10-785425
 release=1
 source=(https://drivers.amd.com/drivers/linux/amdgpu-pro-$version-ubuntu-18.04.tar.xz)
 
@@ -21,7 +21,7 @@ build() {
 
 	mkdir $SRC/libdrm
 	cd $SRC/libdrm
-	ar x $SRC/amdgpu-pro-$version-ubuntu-18.04/libdrm-amdgpu-amdgpu1_2.4.95-${version##*-}_amd64.deb
+	ar x $SRC/amdgpu-pro-$version-ubuntu-18.04/libdrm-amdgpu-amdgpu1_2.4.97-${version##*-}_amd64.deb
 	tar xJf data.tar.xz
 	cd opt/amdgpu/lib/x86_64-linux-gnu
 	rm libdrm_amdgpu.so.1
