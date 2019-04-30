@@ -12,6 +12,7 @@ source=(
 	https://gitweb.gentoo.org/repo/gentoo.git/plain/media-gfx/blender/files/$name-${version}-gcc-8.patch
 	https://gitweb.gentoo.org/repo/gentoo.git/plain/media-gfx/blender/files/$name-${version}-ffmpeg-4-compat.patch
 	https://src.fedoraproject.org/rpms/$name/raw/master/f/$name-oiio2.patch
+	https://src.fedoraproject.org/rpms/$name/raw/master/f/${name}-2.79-python37.patch
 )
 
 build() {
@@ -20,6 +21,7 @@ build() {
 	patch -p1 <$SRC/$name-${version}-gcc-8.patch
 	patch -p1 <$SRC/$name-${version}-ffmpeg-4-compat.patch
 	patch -p1 <$SRC/${name}-oiio2.patch
+	patch -p1 <$SRC/${name}-2.79-python37.patch
 
 	mkdir build && cd build
 	cmake -C ../build_files/cmake/config/${name}_release.cmake ../ \
@@ -47,6 +49,6 @@ build() {
 	python3 -m compileall $PKG/usr/share/$name
 	python3 -O -m compileall $PKG/usr/share/$name
 
-	rm -rf $PKG/usr/share/{doc,$name/${version%[a-z]}/scripts/addons/cycles/license}
+	rm -rf $PKG/usr/share/{doc,$name/${version%[a-z]}/license}
 	find $PKG -iname 'readme*' -delete
 }
