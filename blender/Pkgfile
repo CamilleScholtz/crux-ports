@@ -1,23 +1,25 @@
 # Description: A fully integrated 3D graphics creation suite.
 # URL:         https://blender.org/
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
-# Depends on:  boost desktop-file-utils ffmpeg fftw glew glu python3 openimageio opencolorio
+# Depends on:  git boost desktop-file-utils ffmpeg fftw glew glu python3 openimageio opencolorio
 # Optional:    opencl-amd
 
 name=blender
 version=2.79b
-release=2
+release=1
 source=(
 	https://download.$name.org/source/$name-$version.tar.gz
-	ffmpeg-4.0.patch
+	https://gitweb.gentoo.org/repo/gentoo.git/plain/media-gfx/blender/files/$name-${version}-gcc-8.patch
+	https://gitweb.gentoo.org/repo/gentoo.git/plain/media-gfx/blender/files/$name-${version}-ffmpeg-4-compat.patch
+	https://src.fedoraproject.org/rpms/$name/raw/master/f/$name-oiio2.patch
 )
 
 build() {
 	cd $name-$version
 
-	# ffmpeg fix
-	patch -p1 <$SRC/ffmpeg-4.0.patch
-	sed -i 's/c\->me_method = ME_EPZS/\/\/c\->me_method = ME_EPZS/' source/blender/blenkernel/intern/writeffmpeg.c
+	patch -p1 <$SRC/$name-${version}-gcc-8.patch
+	patch -p1 <$SRC/$name-${version}-ffmpeg-4-compat.patch
+	patch -p1 <$SRC/${name}-oiio2.patch
 
 	mkdir build && cd build
 	cmake -C ../build_files/cmake/config/${name}_release.cmake ../ \
@@ -26,10 +28,10 @@ build() {
 		-DWITH_INSTALL_PORTABLE=OFF \
 		-DWITH_INTERNATIONAL=OFF \
 		-DWITH_PYTHON=ON \
-		-DPYTHON_VERSION=3.6 \
+		-DPYTHON_VERSION=3.7 \
 		-DPYTHON_LIBPATH=/usr/lib \
-		-DPYTHON_LIBRARY=python3.6m \
-		-DPYTHON_INCLUDE_DIRS=/usr/include/python3.6m \
+		-DPYTHON_LIBRARY=python3.7m \
+		-DPYTHON_INCLUDE_DIRS=/usr/include/python3.7m \
 		-DWITH_PYTHON_INSTALL=OFF \
 		-DOPENIMAGEIO_ROOT_DIR=/usr \
 		-DWITH_CYCLES=ON \
