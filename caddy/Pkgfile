@@ -5,21 +5,26 @@
 
 name=caddy
 version=git
-release=8
+release=9
 source=(
+	plugins.go
 	caddy.conf
 	caddy
 )
 
 build() {
 	export GOPATH=$(pwd)
-	go get -u -v -fix github.com/mholt/$name/$name
-	go get -u -v -fix github.com/caddyserver/builds
-	cd src/github.com/mholt/$name/$name
+	export GO111MODULE=on
 
-	sed -i 's/var EnableTelemetry = true/var EnableTelemetry = false/' caddymain/run.go
+	mkdir -p src/github.com/crux/caddy
+	cd src/github.com/crux/caddy
+	cp $SRC/plugins.go .
+	go mod init caddy
+	go get -v github.com/mholt/$name
 
-	go run build.go
+	sed -i 's/upload/punfed/g' $SRC/pkg/mod/github.com/mholt/caddy@v1.0.0/caddyhttp/httpserver/plugin.go
+
+	go build -v
 
 	install -Dm755 caddy $PKG/usr/sbin/caddy
 	install -Dm755 $SRC/caddy $PKG/etc/rc.d/caddy
