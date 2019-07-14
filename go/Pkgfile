@@ -4,12 +4,11 @@
 # Depends on:
 
 name=go
-version=1.12.4
+version=1.13beta1
 release=1
 source=(
 	https://dl.google.com/$name/$name$version.src.tar.gz
 	https://dl.google.com/$name/$name$version.linux-amd64.tar.gz
-	$name-certpath.diff
 )
 
 unpack_source() {
@@ -18,7 +17,6 @@ unpack_source() {
 		-C $SRC/go-bootstrap-$version --strip-components 1
 	bsdtar -xf $PKGMK_SOURCE_DIR/go$version.src.tar.gz \
 		-C $SRC
-	cp go-certpath.diff $SRC
 }
 
 build() {
@@ -26,8 +24,6 @@ build() {
 	export GOROOT_FINAL=/usr/lib/go
 	export GOOS=linux
 	export GOARCH=amd64
-
-	patch -p0 -i $SRC/$name-certpath.diff
 
 	cd go/src
 	bash make.bash --no-clean
