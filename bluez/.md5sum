@@ -1,0 +1,5 @@
+a8b400b0c002ad3374c196360ada60bb  0001-obex-Use-GLib-helper-function-to-manipulate-paths.patch
+7eca6c13dc122a6ae65dc9dbb38fc1c1  0004-agent-Assert-possible-infinite-loop.patch
+9e470ff7a06e181042dedd0ff675bd17  bluetoothd
+1fe387ce7a460b356dfef98ec77d6e67  bluez-5.50-sink-connect.patch
+8e35c67c81a55d3ad4c9f22280dae178  bluez-5.50.tar.xz

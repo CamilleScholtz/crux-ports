@@ -1,0 +1,42 @@
+# Description: Daemons for the bluetooth protocol stack.
+# URL:         http://www.bluez.org/
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  dbus alsa-lib libical ell
+
+name=bluez
+version=5.50
+release=1
+source=(
+	https://www.kernel.org/pub/linux/bluetooth/$name-$version.tar.xz
+	https://gitweb.gentoo.org/repo/gentoo.git/plain/net-wireless/$name/files/$name-$version-sink-connect.patch
+	https://gitweb.gentoo.org/repo/gentoo.git/plain/net-wireless/$name/files/0001-obex-Use-GLib-helper-function-to-manipulate-paths.patch
+	https://gitweb.gentoo.org/repo/gentoo.git/plain/net-wireless/$name/files/0004-agent-Assert-possible-infinite-loop.patch
+	bluetoothd
+)
+
+build() {
+	cd $name-$version
+
+	patch -p1 <$SRC/$name-$version-sink-connect.patch
+	patch -p1 <$SRC/0001-obex-Use-GLib-helper-function-to-manipulate-paths.patch
+	patch -p1 <$SRC/0004-agent-Assert-possible-infinite-loop.patch
+
+	./configure \
+		--prefix=/usr \
+		--libexecdir=/usr/lib/ \
+		--enable-experimental \
+		--enable-tools \
+		--enable-library \
+		--enable-midi \
+		--enable-a2dp \
+		--disable-systemd
+
+	make
+	make DESTDIR=$PKG install
+
+	install -Dm644 profiles/network/network.conf $PKG/etc/bluetooth/network.conf
+	install -Dm644 profiles/input/input.conf $PKG/etc/bluetooth/input.conf
+
+	install -Dm755 $SRC/bluetoothd $PKG/etc/rc.d/bluetoothd
+	mkdir -p $PKG/var/run/bluetoothd
+}
