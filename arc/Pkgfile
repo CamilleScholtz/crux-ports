@@ -3,7 +3,7 @@
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
 # Depends on:  go
 
-name=archiver
+name=arc
 version=git
 release=1
 source=()
@@ -12,5 +12,5 @@ build() {
 	export GOPATH=$(pwd)
 	go get -u -v -fix github.com/mholt/archiver/cmd/$name
 
-	install -Dm755 bin/archiver $PKG/usr/bin/archiver
+	install -Dm755 bin/arc $PKG/usr/bin/arc
 }
