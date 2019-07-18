@@ -1,0 +1,16 @@
+# Description: A tool to switch between pre-defined PulseAudio sinks.
+# URL:         https://github.com/onodera-punpun/melonbar
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  go
+
+name=sps
+version=git
+release=2
+source=()
+
+build() {
+	export GOPATH=$(pwd)
+	go get -v github.com/onodera-punpun/$name
+
+	install -Dm755 bin/$name $PKG/usr/bin/$name
+}
