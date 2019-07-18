@@ -5,12 +5,12 @@
 
 name=golangci-lint
 version=git
-release=1
+release=2
 source=()
 
 build() {
 	export GOPATH=$(pwd)
 
-	go get -u -v -fix github.com/golangci/golangci-lint/cmd/golangci-lint
+	go get -v github.com/golangci/golangci-lint/cmd/golangci-lint
 	install -Dm755 bin/golangci-lint $PKG/usr/bin/golangci-lint
 }
