@@ -5,12 +5,12 @@
 
 name=kepubify
 version=git
-release=1
+release=2
 source=()
 
 build() {
 	export GOPATH=$(pwd)
-	go get -u -v -fix github.com/geek1011/kepubify
+	go get -v github.com/geek1011/kepubify
 
 	install -Dm755 bin/kepubify $PKG/usr/bin/kepubify
 }
