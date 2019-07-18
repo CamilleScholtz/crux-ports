@@ -5,12 +5,12 @@
 
 name=seriesmeta
 version=git
-release=1
+release=2
 source=()
 
 build() {
 	export GOPATH=$(pwd)
-	go get -u -v github.com/geek1011/kepubify/seriesmeta
+	go get -v github.com/geek1011/kepubify/seriesmeta
 
 	install -Dm755 bin/seriesmeta $PKG/usr/bin/seriesmeta
 }
