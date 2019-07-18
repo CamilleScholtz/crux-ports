@@ -6,21 +6,18 @@
 
 name=xutils
 version=git
-release=1
+release=2
 source=()
 
 build() {
 	export GOPATH=$(pwd)
-	go get -d -u -v -fix github.com/onodera-punpun/$name/xcomf
-	go get -d -u -v -fix github.com/onodera-punpun/$name/xdesktop
-	go get -d -u -v -fix github.com/onodera-punpun/$name/xscrot
-	go get -d -u -v -fix github.com/onodera-punpun/$name/xwindow
-	cd src/github.com/onodera-punpun/$name
+	go get -v github.com/onodera-punpun/$name/xcomf
+	go get -v github.com/onodera-punpun/$name/xdesktop
+	go get -v github.com/onodera-punpun/$name/xscrot
+	go get -v github.com/onodera-punpun/$name/xwindow
 
-	for d in $(echo */); do
-		cd $d
-		go build -v
-		install -Dm755 $(echo $d | head -c -2) $PKG/usr/bin/$(echo $d | head -c -2)
-		cd ..
-	done
+	install -Dm755 bin/xcomf $PKG/usr/bin/xcomf
+	install -Dm755 bin/xcomf $PKG/usr/bin/xdesktop
+	install -Dm755 bin/xcomf $PKG/usr/bin/xscrot
+	install -Dm755 bin/xcomf $PKG/usr/bin/xwindow
 }
