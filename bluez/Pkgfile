@@ -4,23 +4,30 @@
 # Depends on:  dbus alsa-lib libical
 
 name=bluez
-version=5.50
+version=git
 release=1
 source=(
-	https://www.kernel.org/pub/linux/bluetooth/$name-$version.tar.xz
-	https://gitweb.gentoo.org/repo/gentoo.git/plain/net-wireless/$name/files/$name-$version-sink-connect.patch
-	https://gitweb.gentoo.org/repo/gentoo.git/plain/net-wireless/$name/files/0001-obex-Use-GLib-helper-function-to-manipulate-paths.patch
-	https://gitweb.gentoo.org/repo/gentoo.git/plain/net-wireless/$name/files/0004-agent-Assert-possible-infinite-loop.patch
+	#https://www.kernel.org/pub/linux/bluetooth/$name-$version.tar.xz
 	bluetoothd
 )
 
+download_git() {
+	if [[ -d $PKGMK_SOURCE_DIR/$name ]]; then
+		git -C $PKGMK_SOURCE_DIR/$name fetch --depth=1
+		git -C $PKGMK_SOURCE_DIR/$name clean -f
+		git -C $PKGMK_SOURCE_DIR/$name reset --hard origin/$2
+	else
+		git -C $PKGMK_SOURCE_DIR clone --depth=1 $1 -b $2 $name
+	fi
+
+	cp -r $PKGMK_SOURCE_DIR/$name $PKGMK_WORK_DIR/src/$name
+}
+
 build() {
-	cd $name-$version
+	download_git git://git.kernel.org/pub/scm/bluetooth/bluez.git master
+	cd $name
 
-	patch -p1 <$SRC/$name-$version-sink-connect.patch
-	patch -p1 <$SRC/0001-obex-Use-GLib-helper-function-to-manipulate-paths.patch
-	patch -p1 <$SRC/0004-agent-Assert-possible-infinite-loop.patch
-
+	autoreconf -fi
 	./configure \
 		--prefix=/usr \
 		--libexecdir=/usr/lib/ \
