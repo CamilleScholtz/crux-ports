@@ -5,12 +5,12 @@
 
 name=shfmt
 version=git
-release=1
+release=2
 source=()
 
 build() {
 	export GOPATH=$(pwd)
+	go get -v mvdan.cc/sh/cmd/shfmt
 
-	go get -u -v -fix mvdan.cc/sh/cmd/shfmt
 	install -Dm755 bin/shfmt $PKG/usr/bin/shfmt
 }
