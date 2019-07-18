@@ -1,19 +1,17 @@
 # Description: An icon theme designed to be smooth, sexy, clear, and efficient.
 # URL:         https://launchpad.net/elementaryicons
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
-# Depends on:  librsvg
+# Depends on:  meson ninja librsvg
 
 name=elementary-icon-theme
-version=4.3.1
+version=5.0.4
 release=1
-source=(https://launchpad.net/${name:0:10}icons/${version%%.*}.x/$version/+download/$name-$version.tar.xz)
+source=(https://github.com/elementary/icons/archive/$version.tar.gz)
 
 build() {
-	install -dm755 $PKG/usr/share/icons
-	cp -dr --no-preserve=ownership $name-$version $PKG/usr/share/icons/${name:0:10}
+	cd icons-$version
 
-	rm -r $PKG/usr/share/icons/${name:0:10}/{.gitignore,CMakeLists.txt,cmake,cursors/CMakeLists.txt,volumeicon,AUTHORS,CODE_OF_CONDUCT.md,CONTRIBUTING.md,CONTRIBUTORS,COPYING,README.md}
+	meson build --prefix=/usr
 
-	find $PKG -type d -exec chmod 755 {} +
-	find $PKG -type f -exec chmod 644 {} +
+	DESTDIR=$PKG ninja -C build -j ${JOBS:-1} install
 }
