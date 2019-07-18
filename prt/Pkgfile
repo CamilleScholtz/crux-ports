@@ -6,17 +6,17 @@
 
 name=prt
 version=git
-release=1
+release=2
 source=()
 
 build() {
 	export GOPATH=$(pwd)
-	go get -d -u -v -fix github.com/onodera-punpun/$name
+	go get -v github.com/onodera-punpun/$name
+
+	install -Dm755 bin/$name $PKG/usr/bin/$name
+
 	cd src/github.com/onodera-punpun/$name
 
-	go build -v
-
-	install -Dm755 $name $PKG/usr/bin/$name
 	install -Dm755 runtime/pkgmk/pkgmk $PKG/usr/share/prt/pkgmk
 	install -Dm644 runtime/config/config.toml $PKG/etc/prt/config.toml
 
