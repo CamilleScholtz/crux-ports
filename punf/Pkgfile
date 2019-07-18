@@ -6,20 +6,17 @@
 
 name=punf
 version=git
-release=1
+release=2
 source=()
 
 build() {
 	export GOPATH=$(pwd)
-	go get -d -u -v -fix github.com/onodera-punpun/$name
-	cd src/github.com/onodera-punpun/$name
+	go get -v github.com/onodera-punpun/$name
 
-	go build -v
-
-	install -Dm755 $name $PKG/usr/bin/$name
+	install -Dm755 bin/$name $PKG/usr/bin/$name
 
 	# Install shell files
 	if [[ -e '/usr/bin/fish' ]]; then
-		install -Dm644 runtime/fish/completions/punf.fish $PKG/usr/share/fish/completions/punf.fish
+		install -Dm644 src/github.com/onodera-punpun/punf/runtime/fish/completions/punf.fish $PKG/usr/share/fish/completions/punf.fish
 	fi
 }
