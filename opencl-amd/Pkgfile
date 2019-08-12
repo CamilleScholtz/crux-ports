@@ -4,8 +4,9 @@
 # Depends on:  libdrm ocl-icd
 
 name=opencl-amd
-version=19.10-785425
+version=19.20-812932
 release=1
+PKGMK_WGET_OPTS="--referer https://support.amd.com/en-us/kb-articles/Pages/AMDGPU-PRO-Driver-for-Linux-Release-Notes.aspx"
 source=(https://drivers.amd.com/drivers/linux/amdgpu-pro-$version-ubuntu-18.04.tar.xz)
 
 build() {
