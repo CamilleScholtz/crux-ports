@@ -67,11 +67,11 @@ drwxr-xr-x	root/root	usr/include/OpenImageIO/fmt/
 -rw-r--r--	root/root	usr/include/OpenImageIO/version.h
 drwxr-xr-x	root/root	usr/lib/
 lrwxrwxrwx	root/root	usr/lib/libOpenImageIO.so -> libOpenImageIO.so.2.0
-lrwxrwxrwx	root/root	usr/lib/libOpenImageIO.so.2.0 -> libOpenImageIO.so.2.0.8
--rwxr-xr-x	root/root	usr/lib/libOpenImageIO.so.2.0.8
+lrwxrwxrwx	root/root	usr/lib/libOpenImageIO.so.2.0 -> libOpenImageIO.so.2.0.10
+-rwxr-xr-x	root/root	usr/lib/libOpenImageIO.so.2.0.10
 lrwxrwxrwx	root/root	usr/lib/libOpenImageIO_Util.so -> libOpenImageIO_Util.so.2.0
-lrwxrwxrwx	root/root	usr/lib/libOpenImageIO_Util.so.2.0 -> libOpenImageIO_Util.so.2.0.8
--rwxr-xr-x	root/root	usr/lib/libOpenImageIO_Util.so.2.0.8
+lrwxrwxrwx	root/root	usr/lib/libOpenImageIO_Util.so.2.0 -> libOpenImageIO_Util.so.2.0.10
+-rwxr-xr-x	root/root	usr/lib/libOpenImageIO_Util.so.2.0.10
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/OpenImageIO.pc
 drwxr-xr-x	root/root	usr/lib/python2.7/
