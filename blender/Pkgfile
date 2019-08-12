@@ -1,27 +1,16 @@
 # Description: A fully integrated 3D graphics creation suite.
 # URL:         https://blender.org/
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
-# Depends on:  git boost desktop-file-utils ffmpeg fftw glew glu python3 openimageio opencolorio
+# Depends on:  git boost desktop-file-utils ffmpeg fftw glew glu openimageio opencolorio python3-numpy
 # Optional:    opencl-amd
 
 name=blender
-version=2.79b
+version=2.80
 release=1
-source=(
-	https://download.$name.org/source/$name-$version.tar.gz
-	https://gitweb.gentoo.org/repo/gentoo.git/plain/media-gfx/blender/files/$name-${version}-gcc-8.patch
-	https://gitweb.gentoo.org/repo/gentoo.git/plain/media-gfx/blender/files/$name-${version}-ffmpeg-4-compat.patch
-	https://src.fedoraproject.org/rpms/$name/raw/master/f/$name-oiio2.patch
-	https://src.fedoraproject.org/rpms/$name/raw/master/f/${name}-2.79-python37.patch
-)
+source=(https://download.$name.org/source/$name-$version.tar.gz)
 
 build() {
 	cd $name-$version
-
-	patch -p1 <$SRC/$name-${version}-gcc-8.patch
-	patch -p1 <$SRC/$name-${version}-ffmpeg-4-compat.patch
-	patch -p1 <$SRC/${name}-oiio2.patch
-	patch -p1 <$SRC/${name}-2.79-python37.patch
 
 	mkdir build && cd build
 	cmake -C ../build_files/cmake/config/${name}_release.cmake ../ \
@@ -40,8 +29,7 @@ build() {
 		-DWITH_CYCLES_NATIVE_ONLY=ON \
 		-DWITH_CYCLES_PTEX=OFF \
 		-DWITH_SYSTEM_OPENJPEG=ON \
-		-DWITH_SYSTEM_LZO=ON \
-		-DWITH_LLVM=ON
+		-DWITH_SYSTEM_LZO=ON
 
 	make
 	make DESTDIR=$PKG install
@@ -49,6 +37,6 @@ build() {
 	python3 -m compileall $PKG/usr/share/$name
 	python3 -O -m compileall $PKG/usr/share/$name
 
-	rm -rf $PKG/usr/share/{doc,$name/${version%[a-z]}/license}
+	rm -rf $PKG/usr/share/{doc,$name/${version%[a-z]}/scripts/addons/cycles/license}
 	find $PKG -iname 'readme*' -delete
 }
