@@ -1,0 +1,22 @@
+# Description: A Vulkan-based compatibility layer for Direct3D 10/11 which allows running 3D applications on Linux using Wine.
+# URL:         https://github.com/doitsujin/dxvk
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  vulkan-loader wine
+
+name=dxvk-bin
+version=1.3.3
+release=1
+source=(https://github.com/doitsujin/dxvk/releases/download/v$version/dxvk-$version.tar.gz)
+
+build() {
+	cd dxvk-$version
+
+	mkdir -p $PKG/usr/share/dxvk
+	mv * $PKG/usr/share/dxvk
+
+	mkdir -p $PKG/usr/bin
+	ln -s /usr/share/dxvk/setup_dxvk.sh $PKG/usr/bin/setup_dxvk
+	chmod +x $PKG/usr/share/dxvk/setup_dxvk.sh
+
+	chown -R root:root $PKG/usr/
+}
