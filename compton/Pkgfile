@@ -1,11 +1,11 @@
 # Description: A compositor for X.
 # URL:         https://github.com/chjj/compton
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
-# Depends on:  git libpcre mesa3d xorg-xcb-util-renderutil xorg-xcb-util-image xorg-libxcomposite xorg-libxinerama xorg-libxrandr xorg-libxdamage libev meson ninja
+# Depends on:  git libpcre mesa3d xorg-xcb-util-renderutil xorg-xcb-util-image xorg-libxcomposite xorg-libxinerama xorg-libxrandr xorg-libxdamage libev meson ninja uthash
 
 name=compton
 version=git
-release=4
+release=5
 source=()
 
 download_git() {
