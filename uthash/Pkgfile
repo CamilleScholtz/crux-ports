@@ -1,0 +1,19 @@
+# Description: C preprocessor implementations of a hash table and a linked list.
+# URL:         https://troydhanson.github.io/uthash/
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:
+
+name=uthash
+version=2.1.0
+release=1
+source=(https://github.com/troydhanson/$name/archive/v$version.tar.gz)
+
+build() {
+	cd $name-$version/src
+
+	install -dm755 $PKG/usr/include/
+
+	for h in *.h; do
+		install -m644 ${h} $PKG/usr/include/
+	done
+}
