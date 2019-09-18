@@ -4,7 +4,7 @@
 # Depends on:  python3
 
 name=python3-numpy
-version=1.17.0
+version=1.17.2
 release=1
 source=(https://github.com/numpy/numpy/releases/download/v$version/numpy-$version.tar.gz)
 
