@@ -1,0 +1,56 @@
+# Description: Implementation of Windows DLL's and core.
+# URL:         https://www.winehq.com/
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  fontconfig freeglut gnutls lcms2 mpg123 openal prelink vkd3d xorg-libxcomposite xorg-libxcursor xorg-libxinerama xorg-libxxf86dga
+
+name=wine
+version=4.16
+release=1
+source=(
+	https://dl.winehq.org/wine/source/4.x/$name-${version%-*}.tar.xz
+	https://github.com/wine-staging/wine-staging/archive/v$version.tar.gz
+)
+
+build() {
+	wine-staging-$version/patches/patchinstall.sh DESTDIR=$name-${version%-*} --all
+
+	# https://bugs.winehq.org/show_bug.cgi?id=43530
+	export CFLAGS="${CFLAGS/-fno-plt/}"
+	export LDFLAGS="${LDFLAGS/,-z,now/}"
+
+	install -d wine32 wine64
+
+	cd wine64
+
+	../$name-${version%-*}/configure \
+		--prefix=/usr \
+		--libdir=/usr/lib \
+		--with-x \
+		--enable-win64
+
+	make depend
+	make
+	make DESTDIR=$PKG install
+
+	cd ../wine32
+
+	export CFLAGS="${CFLAGS} -m32"
+	export CXXFLAGS="${CXXFLAGS} -m32"
+	export LDFLAGS="${LDFLAGS} -m32"
+	export PKG_CONFIG_LIBDIR="/usr/lib32/pkgconfig"
+
+	../$name-${version%-*}/configure \
+		--prefix=/usr \
+		--libdir=/usr/lib32 \
+		--with-x \
+		--x-includes=/usr/include/X11 \
+		--x-libraries=/usr/lib32 \
+		--cache-file=config.cache \
+		--with-wine64=../wine64
+
+	make depend
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/man/??.UTF-8
+}
