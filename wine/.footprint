@@ -76,6 +76,7 @@ drwxr-xr-x	root/root	usr/include/wine/msvcrt/sys/
 -rw-r--r--	root/root	usr/include/wine/msvcrt/sys/unistd.h
 -rw-r--r--	root/root	usr/include/wine/msvcrt/sys/utime.h
 -rw-r--r--	root/root	usr/include/wine/msvcrt/time.h
+-rw-r--r--	root/root	usr/include/wine/msvcrt/uchar.h
 -rw-r--r--	root/root	usr/include/wine/msvcrt/unistd.h
 -rw-r--r--	root/root	usr/include/wine/msvcrt/wchar.h
 -rw-r--r--	root/root	usr/include/wine/msvcrt/wctype.h
@@ -835,6 +836,7 @@ drwxr-xr-x	root/root	usr/include/wine/windows/ddk/
 -rw-r--r--	root/root	usr/include/wine/windows/textserv.h
 -rw-r--r--	root/root	usr/include/wine/windows/textstor.h
 -rw-r--r--	root/root	usr/include/wine/windows/textstor.idl
+-rw-r--r--	root/root	usr/include/wine/windows/threadpoolapiset.h
 -rw-r--r--	root/root	usr/include/wine/windows/thumbcache.h
 -rw-r--r--	root/root	usr/include/wine/windows/thumbcache.idl
 -rw-r--r--	root/root	usr/include/wine/windows/timezoneapi.h
@@ -1390,6 +1392,7 @@ drwxr-xr-x	root/root	usr/lib/wine/
 -rwxr-xr-x	root/root	usr/lib/wine/dpvoice.dll.so
 -rwxr-xr-x	root/root	usr/lib/wine/dpwsockx.dll.so
 -rwxr-xr-x	root/root	usr/lib/wine/drmclien.dll.so
+-rwxr-xr-x	root/root	usr/lib/wine/dsdmo.dll.so
 -rwxr-xr-x	root/root	usr/lib/wine/dsound.dll.so
 -rwxr-xr-x	root/root	usr/lib/wine/dsquery.dll.so
 -rwxr-xr-x	root/root	usr/lib/wine/dssenh.dll.so
@@ -1833,6 +1836,7 @@ drwxr-xr-x	root/root	usr/lib/wine/fakedlls/
 -rw-r--r--	root/root	usr/lib/wine/fakedlls/dpvoice.dll
 -rw-r--r--	root/root	usr/lib/wine/fakedlls/dpwsockx.dll
 -rw-r--r--	root/root	usr/lib/wine/fakedlls/drmclien.dll
+-rw-r--r--	root/root	usr/lib/wine/fakedlls/dsdmo.dll
 -rw-r--r--	root/root	usr/lib/wine/fakedlls/dsound.dll
 -rw-r--r--	root/root	usr/lib/wine/fakedlls/dsquery.dll
 -rw-r--r--	root/root	usr/lib/wine/fakedlls/dssenh.dll
@@ -3327,6 +3331,7 @@ drwxr-xr-x	root/root	usr/lib32/wine/
 -rwxr-xr-x	root/root	usr/lib32/wine/dpvoice.dll.so
 -rwxr-xr-x	root/root	usr/lib32/wine/dpwsockx.dll.so
 -rwxr-xr-x	root/root	usr/lib32/wine/drmclien.dll.so
+-rwxr-xr-x	root/root	usr/lib32/wine/dsdmo.dll.so
 -rwxr-xr-x	root/root	usr/lib32/wine/dsound.dll.so
 -rwxr-xr-x	root/root	usr/lib32/wine/dsquery.dll.so
 -rwxr-xr-x	root/root	usr/lib32/wine/dssenh.dll.so
@@ -3779,6 +3784,7 @@ drwxr-xr-x	root/root	usr/lib32/wine/fakedlls/
 -rw-r--r--	root/root	usr/lib32/wine/fakedlls/dpvoice.dll
 -rw-r--r--	root/root	usr/lib32/wine/fakedlls/dpwsockx.dll
 -rw-r--r--	root/root	usr/lib32/wine/fakedlls/drmclien.dll
+-rw-r--r--	root/root	usr/lib32/wine/fakedlls/dsdmo.dll
 -rw-r--r--	root/root	usr/lib32/wine/fakedlls/dsound.dll
 -rw-r--r--	root/root	usr/lib32/wine/fakedlls/dsquery.dll
 -rw-r--r--	root/root	usr/lib32/wine/fakedlls/dssenh.dll
