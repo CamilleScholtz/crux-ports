@@ -5,17 +5,18 @@ drwxr-xr-x	root/root	usr/include/
 drwxr-xr-x	root/root	usr/lib/
 -rw-r--r--	root/root	usr/lib/libf2fs.a
 -rwxr-xr-x	root/root	usr/lib/libf2fs.la
-lrwxrwxrwx	root/root	usr/lib/libf2fs.so -> libf2fs.so.6.0.0
-lrwxrwxrwx	root/root	usr/lib/libf2fs.so.6 -> libf2fs.so.6.0.0
--rwxr-xr-x	root/root	usr/lib/libf2fs.so.6.0.0
+lrwxrwxrwx	root/root	usr/lib/libf2fs.so -> libf2fs.so.7.0.0
+lrwxrwxrwx	root/root	usr/lib/libf2fs.so.7 -> libf2fs.so.7.0.0
+-rwxr-xr-x	root/root	usr/lib/libf2fs.so.7.0.0
 -rw-r--r--	root/root	usr/lib/libf2fs_format.a
 -rwxr-xr-x	root/root	usr/lib/libf2fs_format.la
-lrwxrwxrwx	root/root	usr/lib/libf2fs_format.so -> libf2fs_format.so.5.0.0
-lrwxrwxrwx	root/root	usr/lib/libf2fs_format.so.5 -> libf2fs_format.so.5.0.0
--rwxr-xr-x	root/root	usr/lib/libf2fs_format.so.5.0.0
+lrwxrwxrwx	root/root	usr/lib/libf2fs_format.so -> libf2fs_format.so.6.0.0
+lrwxrwxrwx	root/root	usr/lib/libf2fs_format.so.6 -> libf2fs_format.so.6.0.0
+-rwxr-xr-x	root/root	usr/lib/libf2fs_format.so.6.0.0
 drwxr-xr-x	root/root	usr/sbin/
 lrwxrwxrwx	root/root	usr/sbin/defrag.f2fs -> fsck.f2fs
 lrwxrwxrwx	root/root	usr/sbin/dump.f2fs -> fsck.f2fs
+-rwxr-xr-x	root/root	usr/sbin/f2fs_io
 -rwxr-xr-x	root/root	usr/sbin/f2fscrypt
 -rwxr-xr-x	root/root	usr/sbin/f2fstat
 -rwxr-xr-x	root/root	usr/sbin/fibmap.f2fs
