@@ -4,7 +4,7 @@
 # Depends on:  vulkan-loader wine
 
 name=dxvk-bin
-version=1.4.1
+version=1.4.2
 release=1
 source=(https://github.com/doitsujin/dxvk/releases/download/v$version/dxvk-$version.tar.gz)
 
