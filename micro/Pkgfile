@@ -6,18 +6,13 @@
 
 name=micro
 version=git
-release=2
+release=3
 source=()
 
 build() {
+	export GO111MODULE=on
 	export GOPATH=$(pwd)
-	go get -d -v -fix github.com/zyedidia/$name/cmd/$name
-	cd src/github.com/zyedidia/$name
+	go get -v github.com/zyedidia/$name/cmd/$name@refactor2.0
 
-	# More verbose building
-	sed -i "s/go get/go get -v/" Makefile
-	sed -i "s/go build/go build -v/" Makefile
-
-	make install
-	install -Dm755 $SRC/bin/micro $PKG/usr/bin/micro
+	install -Dm755 bin/$name $PKG/usr/bin/$name
 }
