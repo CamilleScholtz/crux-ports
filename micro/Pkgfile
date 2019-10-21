@@ -12,7 +12,7 @@ source=()
 build() {
 	export GO111MODULE=on
 	export GOPATH=$(pwd)
-	go get -v github.com/zyedidia/$name/cmd/$name@refactor2.0
+	go get -v -ldflags "-X github.com/zyedidia/micro/internal/util.Debug=OFF" github.com/zyedidia/$name/cmd/$name@refactor2.0
 
 	install -Dm755 bin/$name $PKG/usr/bin/$name
 }
