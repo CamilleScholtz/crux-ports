@@ -4,7 +4,7 @@
 # Depends on:  meson ninja librsvg
 
 name=elementary-icon-theme
-version=5.0.4
+version=5.1.0
 release=1
 source=(https://github.com/elementary/icons/archive/$version.tar.gz)
 
