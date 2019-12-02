@@ -2,7 +2,7 @@
 # URL:         https://www.musicpd.org/
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
 # Depends on:  boost libid3tag libmpdclient glib ffmpeg meson ninja
-# Optional:    flac libcdio
+# Optional:    flac libcdio icu
 
 name=mpd
 version=0.21.16
