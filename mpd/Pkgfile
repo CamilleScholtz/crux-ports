@@ -1,8 +1,8 @@
 # Description: Flexible server-side application for playing music.
 # URL:         https://www.musicpd.org/
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
-# Depends on:  boost libid3tag libmpdclient glib ffmpeg meson ninja
-# Optional:    flac libcdio icu
+# Depends on:  boost libid3tag libmpdclient glib ffmpeg meson ninja icu
+# Optional:    flac libcdio
 
 name=mpd
 version=0.21.16
