@@ -12,6 +12,7 @@ drwxr-xr-x	root/root	usr/include/OpenImageIO/
 -rw-r--r--	root/root	usr/include/OpenImageIO/argparse.h
 -rw-r--r--	root/root	usr/include/OpenImageIO/array_view.h
 -rw-r--r--	root/root	usr/include/OpenImageIO/atomic.h
+-rw-r--r--	root/root	usr/include/OpenImageIO/attrdelegate.h
 -rw-r--r--	root/root	usr/include/OpenImageIO/benchmark.h
 -rw-r--r--	root/root	usr/include/OpenImageIO/color.h
 -rw-r--r--	root/root	usr/include/OpenImageIO/dassert.h
@@ -39,7 +40,6 @@ drwxr-xr-x	root/root	usr/include/OpenImageIO/fmt/
 -rw-r--r--	root/root	usr/include/OpenImageIO/missing_math.h
 -rw-r--r--	root/root	usr/include/OpenImageIO/oiioversion.h
 -rw-r--r--	root/root	usr/include/OpenImageIO/optparser.h
--rw-r--r--	root/root	usr/include/OpenImageIO/osdep.h
 -rw-r--r--	root/root	usr/include/OpenImageIO/parallel.h
 -rw-r--r--	root/root	usr/include/OpenImageIO/paramlist.h
 -rw-r--r--	root/root	usr/include/OpenImageIO/platform.h
@@ -66,12 +66,18 @@ drwxr-xr-x	root/root	usr/include/OpenImageIO/fmt/
 -rw-r--r--	root/root	usr/include/OpenImageIO/varyingref.h
 -rw-r--r--	root/root	usr/include/OpenImageIO/version.h
 drwxr-xr-x	root/root	usr/lib/
-lrwxrwxrwx	root/root	usr/lib/libOpenImageIO.so -> libOpenImageIO.so.2.0
-lrwxrwxrwx	root/root	usr/lib/libOpenImageIO.so.2.0 -> libOpenImageIO.so.2.0.10
--rwxr-xr-x	root/root	usr/lib/libOpenImageIO.so.2.0.10
-lrwxrwxrwx	root/root	usr/lib/libOpenImageIO_Util.so -> libOpenImageIO_Util.so.2.0
-lrwxrwxrwx	root/root	usr/lib/libOpenImageIO_Util.so.2.0 -> libOpenImageIO_Util.so.2.0.10
--rwxr-xr-x	root/root	usr/lib/libOpenImageIO_Util.so.2.0.10
+drwxr-xr-x	root/root	usr/lib/cmake/
+drwxr-xr-x	root/root	usr/lib/cmake/OpenImageIO/
+-rw-r--r--	root/root	usr/lib/cmake/OpenImageIO/OpenImageIOConfig.cmake
+-rw-r--r--	root/root	usr/lib/cmake/OpenImageIO/OpenImageIOConfigVersion.cmake
+-rw-r--r--	root/root	usr/lib/cmake/OpenImageIO/OpenImageIOTargets-release.cmake
+-rw-r--r--	root/root	usr/lib/cmake/OpenImageIO/OpenImageIOTargets.cmake
+lrwxrwxrwx	root/root	usr/lib/libOpenImageIO.so -> libOpenImageIO.so.2.1
+lrwxrwxrwx	root/root	usr/lib/libOpenImageIO.so.2.1 -> libOpenImageIO.so.2.1.9
+-rwxr-xr-x	root/root	usr/lib/libOpenImageIO.so.2.1.9
+lrwxrwxrwx	root/root	usr/lib/libOpenImageIO_Util.so -> libOpenImageIO_Util.so.2.1
+lrwxrwxrwx	root/root	usr/lib/libOpenImageIO_Util.so.2.1 -> libOpenImageIO_Util.so.2.1.9
+-rwxr-xr-x	root/root	usr/lib/libOpenImageIO_Util.so.2.1.9
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/OpenImageIO.pc
 drwxr-xr-x	root/root	usr/lib/python2.7/
