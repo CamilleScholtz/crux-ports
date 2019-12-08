@@ -1,0 +1,4 @@
+#!/bin/sh
+
+/opt/vivaldi/update-ffmpeg
+/opt/vivaldi/update-widevine
