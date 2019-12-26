@@ -4,7 +4,7 @@
 # Depends on:  gtk3 cups nss dbus-glib alsa-lib desktop-file-utils shared-mime-info hicolor-icon-theme libnotify
 
 name=vivaldi-bin
-version=2.9.1705.41-1
+version=2.10.1745.23-1
 release=2
 source=(https://downloads.vivaldi.com/stable/vivaldi-stable-$version.x86_64.rpm)
 
