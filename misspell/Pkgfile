@@ -5,12 +5,12 @@
 
 name=misspell
 version=git
-release=1
+release=2
 source=()
 
 build() {
 	export GOPATH=$(pwd)
-	go get -u -v -fix github.com/client9/$name/cmd/$name
+	go get -v github.com/client9/$name/cmd/$name
 
 	install -Dm755 bin/misspell $PKG/usr/bin/misspell
 }
