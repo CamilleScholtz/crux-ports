@@ -9,14 +9,16 @@ release=2
 source=(https://downloads.vivaldi.com/stable/vivaldi-stable-$version.x86_64.rpm)
 
 build() {
-    cp --parents -a {opt,usr/bin,usr/share} $PKG
+	cp --parents -a {opt,usr/bin,usr/share} $PKG
 
-    chmod 4755 $PKG/opt/vivaldi/vivaldi-sandbox
+	chmod 4755 $PKG/opt/vivaldi/vivaldi-sandbox
 
-   	install -dm755 $PKG/usr/bin
-    ln -s /opt/vivaldi/vivaldi $PKG/usr/bin/vivaldi
+	install -dm755 $PKG/usr/bin
+	ln -s /opt/vivaldi/vivaldi $PKG/usr/bin/vivaldi
 
-    for res in 16 22 24 32 48 64 128 256; do
-        install -Dm644 $PKG/opt/vivaldi/product_logo_${res}.png $PKG/usr/share/icons/hicolor/${res}x${res}/apps/vivaldi.png
-    done
+	for res in 16 22 24 32 48 64 128 256; do
+		install -Dm644 $PKG/opt/vivaldi/product_logo_${res}.png $PKG/usr/share/icons/hicolor/${res}x${res}/apps/vivaldi.png
+	done
+
+	sed -i '1 i\@import url("user.css");' $PKG/opt/vivaldi/resources/vivaldi/style/common.css
 }
