@@ -1,11 +1,12 @@
 # Description: An advanced browser made with the power user in mind.
-# URL:         https://vivaldi.com
+# URL:         https://vivaldi.com/
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
 # Depends on:  gtk3 cups nss dbus-glib alsa-lib desktop-file-utils shared-mime-info hicolor-icon-theme libnotify
+# Optional:    vivaldi-ffmpeg-codecs
 
 name=vivaldi-bin
-version=2.10.1745.23-1
-release=2
+version=2.10.1745.27-1
+release=1
 source=(https://downloads.vivaldi.com/stable/vivaldi-stable-$version.x86_64.rpm)
 
 build() {
