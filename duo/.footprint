@@ -4,8 +4,11 @@ drwxr-xr-x	root/root	etc/duo/
 -rw-------	root/root	etc/duo/pam_duo.conf
 drwxr-xr-x	root/root	usr/
 drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/common_ini_test.h
 -rw-r--r--	root/root	usr/include/duo.h
+-rw-r--r--	root/root	usr/include/duo_private.h
 -rw-r--r--	root/root	usr/include/shell.h
+-rw-r--r--	root/root	usr/include/unity.h
 -rw-r--r--	root/root	usr/include/util.h
 drwxr-xr-x	root/root	usr/lib/
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
