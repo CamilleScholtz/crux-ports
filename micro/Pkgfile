@@ -6,12 +6,12 @@
 
 name=micro
 version=git
-release=3
+release=4
 source=()
 
 build() {
 	export GOPATH=$(pwd)
-	go get -d -v -fix github.com/zyedidia/$name/cmd/$name
+	go get -v -d github.com/zyedidia/$name/cmd/$name
 	cd src/github.com/zyedidia/$name
 
 	# More verbose building
