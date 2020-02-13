@@ -1,11 +1,11 @@
 # Description: Fast, lightweight, standards-compliant window manager.
 # URL:         https://github.com/onodera-punpun/openbox
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
-# Depends on:  git xorg-server pango
+# Depends on:  git xorg pango
 
 name=openbox
 version=git
-release=3
+release=4
 source=()
 
 download_git() {
@@ -31,9 +31,7 @@ build() {
 		--disable-imlib2 \
 		--disable-librsvg \
 		--disable-session-management \
-		--disable-xkb \
 		--disable-xinerama \
-		--disable-xsync \
 		--disable-nls
 
 	make
