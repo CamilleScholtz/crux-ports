@@ -83,7 +83,6 @@ drwxr-xr-x	root/root	opt/vivaldi/locales/
 -rw-r--r--	root/root	opt/vivaldi/locales/vi.pak
 -rw-r--r--	root/root	opt/vivaldi/locales/zh-CN.pak
 -rw-r--r--	root/root	opt/vivaldi/locales/zh-TW.pak
--rw-r--r--	root/root	opt/vivaldi/natives_blob.bin
 -rw-r--r--	root/root	opt/vivaldi/product_logo_128.png
 -rw-r--r--	root/root	opt/vivaldi/product_logo_16.png
 -rw-r--r--	root/root	opt/vivaldi/product_logo_22.png
