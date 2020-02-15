@@ -4,8 +4,8 @@
 # Depends on:  go
 
 name=caddy
-version=git
-release=9
+version=2.0.0-beta.14
+release=1
 source=(
 	plugins.go
 	caddy.conf
@@ -14,15 +14,18 @@ source=(
 
 build() {
 	export GOPATH=$(pwd)
-	export GO111MODULE=on
 
-	mkdir -p src/github.com/crux/caddy
-	cd src/github.com/crux/caddy
-	cp $SRC/plugins.go .
+	mkdir -p src/github.com/punpun/caddy
+	cd src/github.com/punpun/caddy
+	cp $SRC/plugins.go main.go
 	go mod init caddy
-	go get -v github.com/mholt/$name
+	# Temp fix, remove this
+	go get -v github.com/onodera-punpun/punfed@4a3927d
+	go get -v github.com/caddyserver/$name/v2@v$version
 
-	sed -i 's/upload/punfed/g' $SRC/pkg/mod/github.com/mholt/caddy@v1.0.0/caddyhttp/httpserver/plugin.go
+	#sed -i 's/upload/punfed/g' $SRC/pkg/mod/github.com/caddyserver/caddy@v$version/caddyhttp/httpserver/plugin.go
+
+	#go build -v -ldflags "-X github.com/mholt/caddy/caddy/caddymain.gitTag=$version"
 
 	go build -v
 

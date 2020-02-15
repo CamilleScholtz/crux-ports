@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/mholt/caddy/caddy/caddymain"
+	caddycmd "github.com/caddyserver/caddy/v2/cmd"
+
+	_ "github.com/caddyserver/caddy/v2/modules/standard"
 	_ "github.com/onodera-punpun/punfed"
 )
 
 func main() {
-	caddymain.EnableTelemetry = false
-	caddymain.Run()
+	caddycmd.Main()
 }
