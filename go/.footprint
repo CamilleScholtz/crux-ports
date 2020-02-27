@@ -137,7 +137,6 @@ drwxr-xr-x	root/root	usr/lib/go/doc/gopher/pencil/
 -rw-r--r--	root/root	usr/lib/go/doc/ie.css
 -rw-r--r--	root/root	usr/lib/go/doc/install-source.html
 -rw-r--r--	root/root	usr/lib/go/doc/install.html
--rw-r--r--	root/root	usr/lib/go/doc/modules.md
 drwxr-xr-x	root/root	usr/lib/go/doc/play/
 -rw-r--r--	root/root	usr/lib/go/doc/play/fib.go
 -rw-r--r--	root/root	usr/lib/go/doc/play/hello.go
