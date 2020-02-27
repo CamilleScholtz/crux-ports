@@ -26,4 +26,5 @@ build() {
 	install -Dm755 caddy $PKG/usr/sbin/caddy
 	install -Dm755 $SRC/caddy $PKG/etc/rc.d/caddy
 	install -Dm644 $SRC/caddy.conf $PKG/etc/caddy/caddy.conf
+	install -dm755 $PKG/var/run/caddy
 }
