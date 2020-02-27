@@ -5,7 +5,7 @@
 
 name=caddy
 version=2.0.0-beta.14
-release=1
+release=2
 source=(
 	plugins.go
 	caddy.conf
@@ -19,13 +19,7 @@ build() {
 	cd src/github.com/punpun/caddy
 	cp $SRC/plugins.go main.go
 	go mod init caddy
-	# Temp fix, remove this
-	go get -v github.com/onodera-punpun/punfed@4a3927d
 	go get -v github.com/caddyserver/$name/v2@v$version
-
-	#sed -i 's/upload/punfed/g' $SRC/pkg/mod/github.com/caddyserver/caddy@v$version/caddyhttp/httpserver/plugin.go
-
-	#go build -v -ldflags "-X github.com/mholt/caddy/caddy/caddymain.gitTag=$version"
 
 	go build -v
 

@@ -5,18 +5,12 @@
 
 SSD=/sbin/start-stop-daemon
 PROG=/usr/sbin/caddy
-PID=/var/run/caddy.pid
-OPTS="-conf=/etc/caddy/caddy.conf -agree=true -pidfile=$PID"
+PID=/var/run/caddy/caddy.pid
+OPTS="start --config /etc/caddy/caddy.conf --adapter caddyfile"
 
 case $1 in
 start)
-	# Set the CADDYPATH; Let's Encrypt certificates will be written to this directory.
-	export CADDYPATH=/etc/caddy/ssl
-
-	# Set the ulimits
-	ulimit -n 8192
-
-	$SSD --start --background --pidfile $PID --exec $PROG -- $OPTS
+	$SSD --start --make-pidfile --pidfile $PID --exec $PROG -- $OPTS
 	;;
 stop)
 	$SSD --stop --retry 10 --pidfile $PID
