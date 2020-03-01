@@ -14,5 +14,6 @@ build() {
 
 	install -Dm755 bin/$name $PKG/usr/bin/$name
 	install -Dm755 $SRC/$name $PKG/etc/rc.d/$name
+	install -Dm644 $SRC/src/github.com/onodera-punpun/$name/runtime/config/config.toml $PKG/etc/$name/config.toml
 	install -dm755 $PKG/var/run/$name
 }
