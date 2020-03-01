@@ -5,7 +5,7 @@
 
 name=caddy
 version=2.0.0-beta.15
-release=2
+release=3
 source=(
 	plugins.go
 	caddy.conf
@@ -23,7 +23,7 @@ build() {
 
 	go build -v
 
-	install -Dm755 caddy $PKG/usr/sbin/caddy
+	install -Dm755 caddy $PKG/usr/bin/caddy
 	install -Dm755 $SRC/caddy $PKG/etc/rc.d/caddy
 	install -Dm644 $SRC/caddy.conf $PKG/etc/caddy/caddy.conf
 	install -dm755 $PKG/var/run/caddy

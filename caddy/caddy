@@ -4,13 +4,13 @@
 #
 
 SSD=/sbin/start-stop-daemon
-PROG=/usr/sbin/caddy
+PROG=/usr/bin/caddy
 PID=/var/run/caddy/caddy.pid
-OPTS="start --config /etc/caddy/caddy.conf --adapter caddyfile"
+OPTS="run --config /etc/caddy/caddy.conf --adapter caddyfile"
 
 case $1 in
 start)
-	$SSD --start --make-pidfile --pidfile $PID --exec $PROG -- $OPTS
+	$SSD --start --background --make-pidfile --pidfile $PID --exec $PROG -- $OPTS
 	;;
 stop)
 	$SSD --stop --retry 10 --pidfile $PID

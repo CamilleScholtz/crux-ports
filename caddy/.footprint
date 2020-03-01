@@ -4,8 +4,8 @@ drwxr-xr-x	root/root	etc/caddy/
 drwxr-xr-x	root/root	etc/rc.d/
 -rwxr-xr-x	root/root	etc/rc.d/caddy
 drwxr-xr-x	root/root	usr/
-drwxr-xr-x	root/root	usr/sbin/
--rwxr-xr-x	root/root	usr/sbin/caddy
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/caddy
 drwxr-xr-x	root/root	var/
 drwxr-xr-x	root/root	var/run/
 drwxr-xr-x	root/root	var/run/caddy/
