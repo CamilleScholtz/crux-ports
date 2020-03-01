@@ -13,5 +13,6 @@ build() {
 	go get -v github.com/onodera-punpun/$name
 
 	install -Dm755 bin/$name $PKG/usr/bin/$name
+	install -Dm755 $SRC/$name $PKG/etc/rc.d/$name
 	install -dm755 $PKG/var/run/$name
 }
