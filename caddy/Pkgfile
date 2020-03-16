@@ -29,5 +29,5 @@ build() {
 	install -dm755 -g www -o caddy $PKG/var/lib/caddy
 	install -dm755 -g www -o caddy $PKG/var/run/caddy
 
-	setcap cap_net_bind_service=+ep $PKG/usr/bin/caddy
+	setcap CAP_NET_BIND_SERVICE=+eip $PKG/usr/bin/caddy
 }
