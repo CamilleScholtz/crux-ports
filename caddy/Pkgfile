@@ -4,8 +4,8 @@
 # Depends on:  go
 
 name=caddy
-version=2.0.0-beta.15
-release=3
+version=2.0.0-beta.17
+release=1
 source=(
 	plugins.go
 	caddy.conf
