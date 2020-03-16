@@ -10,7 +10,7 @@ OPTS="run --config /etc/caddy/caddy.conf --adapter caddyfile"
 
 case $1 in
 start)
-	$SSD --start --background --make-pidfile --pidfile $PID --exec $PROG -- $OPTS
+	$SSD --start -c caddy --background --make-pidfile --pidfile $PID --exec $PROG -- $OPTS
 	;;
 stop)
 	$SSD --stop --retry 10 --pidfile $PID
