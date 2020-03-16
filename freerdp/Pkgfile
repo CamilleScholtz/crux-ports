@@ -1,0 +1,21 @@
+# Description: Free implementation of the Remote Desktop Protocol.
+# URL:         http://www.freerdp.com/
+# Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
+# Depends on:  ffmpeg cmake xorg-libx11 xorg-libxrender xorg-libxcursor xorg-libxext
+
+name=freerdp
+version=2.0.0-rc4
+release=1
+source=(https://github.com/$name/$name/archive/$version.tar.gz)
+
+build() {
+	cd FreeRDP-$version
+
+	cmake . \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=/usr/lib
+
+	make
+	make DESTDIR=$PKG install
+}
