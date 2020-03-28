@@ -2,11 +2,11 @@
 # URL:         https://mpv.io/
 # Maintainer:  onodera, https://github.com/onodera-punpun/crux-ports/issues
 # Depends on:  git libjpeg-turbo freetype fribidi
-# Optional:    youtube-dl
+# Optional:    youtube-dl libplacebo
 
 name=mpv
 version=git
-release=2
+release=3
 source=()
 
 download_git() {
