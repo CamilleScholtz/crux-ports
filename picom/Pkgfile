@@ -4,25 +4,12 @@
 # Depends on:  git libpcre mesa3d xorg-xcb-util-renderutil xorg-xcb-util-image xorg-libxcomposite xorg-libxinerama xorg-libxrandr xorg-libxdamage libev meson ninja uthash
 
 name=picom
-version=git
+version=7.5
 release=1
-source=()
-
-download_git() {
-	if [[ -d $PKGMK_SOURCE_DIR/$name ]]; then
-		git -C $PKGMK_SOURCE_DIR/$name fetch --depth=1
-		git -C $PKGMK_SOURCE_DIR/$name clean -f
-		git -C $PKGMK_SOURCE_DIR/$name reset --hard origin/$2
-	else
-		git -C $PKGMK_SOURCE_DIR clone --depth=1 $1 -b $2 $name
-	fi
-
-	cp -r $PKGMK_SOURCE_DIR/$name $PKGMK_WORK_DIR/src/$name
-}
+source=(https://github.com/yshui/$name/archive/v$version.tar.gz)
 
 build() {
-	download_git https://github.com/yshui/$name master
-	cd $name
+	cd $name-$version
 
 	meson build \
 		--prefix /usr \
